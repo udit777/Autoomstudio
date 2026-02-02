@@ -2,15 +2,15 @@ import { HomeHero } from '@/components/layout/HomeHero';
 import { SuccessStories } from '@/components/layout/SuccessStories';
 import { SpecialServices } from '@/components/layout/SpecialServices';
 import { ServiceSection } from '@/components/layout/ServiceSection';
-import { Section } from '@/components/ui/Section';
-import { Button } from '@/components/ui/Button';
-import { CheckCircle2, ArrowRight, Facebook, Twitter, Linkedin, Instagram, Youtube, MessageCircle, MessageSquare } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { WhyWorkWithUs } from '@/components/layout/WhyWorkWithUs';
+import { ReadyToCollaborate } from '@/components/layout/ReadyToCollaborate';
+import { Facebook, Twitter, Linkedin, Instagram, Youtube, MessageCircle, MessageSquare } from 'lucide-react';
 
 // Image Imports
 import aiWorkspaceImg from '@/assets/ai-workspace.png';
 import itInfraImg from '@/assets/it-infrastructure.png';
 import softwareDevImg from '@/assets/software-development.png';
+import socialMediaImg from '@/assets/social-media-office.png';
 
 export function HomePage() {
     return (
@@ -44,7 +44,7 @@ export function HomePage() {
                     { title: "Social Media Content Creation", gradient: "bg-gradient-to-br from-pink-500 to-rose-600" },
                     { title: "Analytics and Reporting", gradient: "bg-gradient-to-br from-rose-500 to-orange-600" },
                 ]}
-                imageSrc={aiWorkspaceImg} // Placeholder since image generation skipped
+                imageSrc={socialMediaImg}
                 imageAlt="Social Media Services Illustration"
                 reversed={true}
             />
@@ -94,96 +94,16 @@ export function HomePage() {
                 reversed={false}
             />
 
-
-
-            {/* Why Choose Us */}
-            <Section className="bg-primary text-primary-foreground relative overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10"
-                    style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '32px 32px' }}
-                />
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-                    <div>
-                        <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Why Choose Autoom Studio?</h2>
-                        <div className="space-y-4">
-                            {[
-                                "Leading Automation Expertise in India",
-                                "24/7 Support & Real-time Monitoring",
-                                "Proven ROI & Efficiency Gains",
-                                "Scalable Enterprise Solutions",
-                                "Cutting-Edge Tech Stack"
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-center gap-3">
-                                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                                    <span className="text-lg">{item}</span>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="mt-8">
-                            <Link to="/about">
-                                <Button variant="secondary" size="lg">
-                                    Discover Our Story
-                                </Button>
-                            </Link>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center">
-                            <div className="text-4xl font-bold mb-2">500+</div>
-                            <div className="text-sm opacity-80">Projects Delivered</div>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center">
-                            <div className="text-4xl font-bold mb-2">98%</div>
-                            <div className="text-sm opacity-80">Client Retention</div>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center">
-                            <div className="text-4xl font-bold mb-2">24/7</div>
-                            <div className="text-sm opacity-80">Support Coverage</div>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center">
-                            <div className="text-4xl font-bold mb-2">10+</div>
-                            <div className="text-sm opacity-80">Years Experience</div>
-                        </div>
-                    </div>
-                </div>
-            </Section>
-
             <SuccessStories />
 
-            {/* CTA Section */}
-            <Section>
-                <div className="bg-card border rounded-3xl p-8 md:p-16 text-center shadow-lg relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-32 -mt-32" />
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -ml-32 -mb-32" />
+            <WhyWorkWithUs />
 
-                    <div className="relative z-10 max-w-2xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Ready to Automate Your Business?</h2>
-                        <p className="text-lg text-muted-foreground mb-8">
-                            Join leading enterprises in India who have transformed their operations with Autoom Studio.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link to="/contact">
-                                <Button size="lg" className="w-full sm:w-auto">
-                                    Get Started Now <ArrowRight className="ml-2 w-4 h-4" />
-                                </Button>
-                            </Link>
-                            <Link to="/services">
-                                <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                                    View Pricing
-                                </Button>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </Section>
+            <ReadyToCollaborate />
 
             {/* Fixed Social Sidebar */}
             <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
                 <a href="#" className="bg-[#3b5998] p-3 text-white hover:w-14 w-12 transition-all flex justify-center"><Facebook className="w-6 h-6" /></a>
-                <a href="#" className="bg-black p-3 text-white hover:w-14 w-12 transition-all flex justify-center"><Twitter className="w-6 h-6" /></a> {/* X logo usually black */}
+                <a href="#" className="bg-black p-3 text-white hover:w-14 w-12 transition-all flex justify-center"><Twitter className="w-6 h-6" /></a>
                 <a href="#" className="bg-[#0077b5] p-3 text-white hover:w-14 w-12 transition-all flex justify-center"><Linkedin className="w-6 h-6" /></a>
                 <a href="#" className="bg-[#E1306C] p-3 text-white hover:w-14 w-12 transition-all flex justify-center"><Instagram className="w-6 h-6" /></a>
                 <a href="#" className="bg-[#FF0000] p-3 text-white hover:w-14 w-12 transition-all flex justify-center"><Youtube className="w-6 h-6" /></a>

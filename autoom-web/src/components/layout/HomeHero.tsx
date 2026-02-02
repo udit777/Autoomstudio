@@ -1,14 +1,23 @@
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ParticleBackground } from '@/components/ui/ParticleBackground';
 
 export function HomeHero() {
     const ref = useRef<HTMLDivElement>(null);
+    const words = ["Build", "Automate", "Manage"];
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prevIndex) => (prevIndex + 1) % words.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
-        <section ref={ref} className="relative min-h-[55vh] flex items-center justify-center overflow-hidden bg-[#050511] pt-20 pb-10">
+        <section ref={ref} className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-[#050511] pt-28 pb-8">
 
             {/* Background Glows */}
             <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-[#8B5CF6]/20 rounded-full blur-[120px]" />
@@ -25,27 +34,31 @@ export function HomeHero() {
                     transition={{ duration: 0.8 }}
                     className="flex flex-col items-center max-w-5xl mx-auto"
                 >
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading tracking-tight text-white mb-6 leading-tight">
-                        Welcome to <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                            Autoom Studio
-                        </span>
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold font-heading tracking-tight text-white mb-2 leading-tight">
+                        Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Autoom Studio</span>
                     </h1>
 
-                    <p className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-4">
+                    <p className="text-lg md:text-xl text-gray-400 max-w-5xl mx-auto leading-relaxed mb-4 whitespace-nowrap">
                         Your Trusted Partner for Industry 4.0 with "Business Process and IT Automation Services."
                     </p>
 
-                    <motion.div
-                        initial={{ scale: 0.9, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: 0.3, duration: 0.8 }}
-                        className="mb-12"
-                    >
-                        <div className="text-5xl md:text-8xl font-bold font-heading bg-clip-text text-transparent bg-gradient-to-r from-[#D946EF] via-[#8B5CF6] to-[#06B6D4] pb-2">
-                            We Manage.
+                    <div className="h-20 mb-4 flex items-center justify-center">
+                        <div className="text-5xl md:text-8xl font-bold font-heading flex gap-4">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D946EF] to-[#8B5CF6]">We</span>
+                            <AnimatePresence mode="wait">
+                                <motion.span
+                                    key={index}
+                                    initial={{ y: 20, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    exit={{ y: -20, opacity: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                    className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]"
+                                >
+                                    {words[index]}.
+                                </motion.span>
+                            </AnimatePresence>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* CTA Button */}
                     <motion.div

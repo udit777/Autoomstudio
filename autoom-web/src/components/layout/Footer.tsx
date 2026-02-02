@@ -1,79 +1,70 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import { Facebook, Twitter, Linkedin, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 
 export function Footer() {
-    const currentYear = new Date().getFullYear();
-
     return (
-        <footer className="bg-primary-dark text-white pt-16 pb-8">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                    {/* Brand Column */}
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-2 mb-4">
-                            <img src={logo} alt="Autoom Studio" className="h-10 w-auto brightness-0 invert" />
-                        </div>
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                            The Leading Automation IT Services in India. We handle the tech, you unleash the potential.
+        <footer className="bg-[#003845] text-white pt-16 pb-4">
+            <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                    {/* About Column */}
+                    <div>
+                        <h3 className="text-xl font-bold mb-6 font-heading">About</h3>
+                        <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                            "Autoom Studio: The leading Automation IT Services in India. Empowering businesses with cutting-edge automation solutions, we are dedicated to delivering seamless business automation. Unleash the power of innovation, enhance productivity, and thrive in the competitive landscape with our bespoke solutions. We specialize in revolutionizing businesses through automation. Experience a seamless integration of technology and efficiency as we propel your enterprise to new heights."
                         </p>
-                        <div className="flex gap-4 pt-4">
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors"><Facebook className="w-5 h-5" /></a>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
-                        </div>
                     </div>
 
-                    {/* Quick Links */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-6">Company</h3>
-                        <ul className="space-y-3">
-                            <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors text-sm">About Us</Link></li>
-                            <li><Link to="/portfolio" className="text-gray-400 hover:text-white transition-colors text-sm">Portfolio</Link></li>
-                            <li><Link to="/blog" className="text-gray-400 hover:text-white transition-colors text-sm">Blog & Insights</Link></li>
-                            <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors text-sm">Contact Us</Link></li>
-                            <li><Link to="/careers" className="text-gray-400 hover:text-white transition-colors text-sm">Careers</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Services */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-6">Services</h3>
-                        <ul className="space-y-3">
-                            <li><Link to="/services/bpa" className="text-gray-400 hover:text-white transition-colors text-sm">Business Automation</Link></li>
-                            <li><Link to="/services/software-dev" className="text-gray-400 hover:text-white transition-colors text-sm">Software Development</Link></li>
-                            <li><Link to="/services/social-media" className="text-gray-400 hover:text-white transition-colors text-sm">Digital Marketing</Link></li>
-                            <li><Link to="/services/cybersecurity" className="text-gray-400 hover:text-white transition-colors text-sm">Cybersecurity</Link></li>
-                            <li><Link to="/services/infrastructure" className="text-gray-400 hover:text-white transition-colors text-sm">IT Infrastructure</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Contact Info */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-6">Contact</h3>
+                    {/* Quick Links Column */}
+                    <div className="md:pl-10">
+                        <h3 className="text-xl font-bold mb-6 font-heading">Quick Links</h3>
                         <ul className="space-y-4">
+                            <li><Link to="/" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"><span className="text-[10px]">»</span> Home</Link></li>
+                            <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"><span className="text-[10px]">»</span> Services</Link></li>
+                            <li><Link to="/blog" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"><span className="text-[10px]">»</span> Blog</Link></li>
+                            <li><Link to="/careers" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"><span className="text-[10px]">»</span> Career</Link></li>
+                            <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"><span className="text-[10px]">»</span> About</Link></li>
+                            <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"><span className="text-[10px]">»</span> Contact Us</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Address Column */}
+                    <div>
+                        <h3 className="text-xl font-bold mb-6 font-heading">Address</h3>
+                        <ul className="space-y-4 mb-8">
                             <li className="flex items-start gap-3">
-                                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                                <span className="text-gray-400 text-sm">Odisha, India</span>
+                                <MapPin className="w-5 h-5 text-white shrink-0 mt-0.5 fill-current" />
+                                <span className="text-gray-300 text-sm">3A Hindustan House, Plot No- 334, GGP Square, Rasulgarh, Bhubaneswar, Odisha, 751010</span>
                             </li>
                             <li className="flex items-center gap-3">
-                                <Phone className="w-5 h-5 text-primary shrink-0" />
-                                <a href="tel:+910000000000" className="text-gray-400 hover:text-white transition-colors text-sm">+91 000 000 0000</a>
+                                <Phone className="w-5 h-5 text-white shrink-0 fill-current" />
+                                <a href="tel:+919545453412" className="text-gray-300 hover:text-white transition-colors text-sm">+919545453412</a>
                             </li>
                             <li className="flex items-center gap-3">
-                                <Mail className="w-5 h-5 text-primary shrink-0" />
-                                <a href="mailto:info@autoomstudio.com" className="text-gray-400 hover:text-white transition-colors text-sm">info@autoomstudio.com</a>
+                                <Mail className="w-5 h-5 text-white shrink-0 fill-current" />
+                                <a href="mailto:connect@stautoomstudio.com" className="text-gray-300 hover:text-white transition-colors text-sm">connect[AT]autoomstudio[DOT]com</a>
                             </li>
                         </ul>
+
+                        <div className="flex gap-4">
+                            <a href="#" className="bg-white/10 p-2 rounded hover:bg-white/20 transition-colors"><Twitter className="w-4 h-4 text-white" /></a>
+                            <a href="#" className="bg-white/10 p-2 rounded hover:bg-white/20 transition-colors"><Linkedin className="w-4 h-4 text-white" /></a>
+                            <a href="#" className="bg-white/10 p-2 rounded hover:bg-white/20 transition-colors"><Instagram className="w-4 h-4 text-white" /></a>
+                            <a href="#" className="bg-white/10 p-2 rounded hover:bg-white/20 transition-colors"><Facebook className="w-4 h-4 text-white" /></a>
+                            <a href="#" className="bg-white/10 p-2 rounded hover:bg-white/20 transition-colors"><Youtube className="w-4 h-4 text-white" /></a>
+                        </div>
                     </div>
                 </div>
 
-                <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-gray-500 text-sm">© {currentYear} Autoom Studio. All rights reserved.</p>
+                <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
                     <div className="flex gap-6">
-                        <Link to="/privacy" className="text-gray-500 hover:text-white text-sm">Privacy Policy</Link>
-                        <Link to="/terms" className="text-gray-500 hover:text-white text-sm">Terms of Service</Link>
+                        <Link to="/privacy" className="hover:text-white">Privacy Policy</Link>
+                        <span>||</span>
+                        <Link to="/terms" className="hover:text-white">Terms & Conditions</Link>
+                        <span>||</span>
+                        <Link to="/refund" className="hover:text-white">Refund and Cancellation</Link>
+                    </div>
+                    <div>
+                        © {new Date().getFullYear()} All Rights Reserved.
                     </div>
                 </div>
             </div>
