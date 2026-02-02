@@ -44,10 +44,10 @@ export function Header() {
                 <nav className="hidden md:flex items-center gap-6">
                     <Link to="/" className="text-sm font-bold text-black hover:text-[#EAB308] transition-colors">Home</Link>
 
-                    {/* Products Dropdown - Placeholder */}
-                    <button className="text-sm font-bold text-black hover:text-[#EAB308] transition-colors">
+                    {/* Products Link */}
+                    <Link to="/products" className="text-sm font-bold text-black hover:text-[#EAB308] transition-colors">
                         Products
-                    </button>
+                    </Link>
 
                     {/* Services Dropdown */}
                     <div className="relative group">
