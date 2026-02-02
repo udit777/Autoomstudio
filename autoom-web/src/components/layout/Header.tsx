@@ -8,7 +8,7 @@ import logo from '@/assets/logo.png';
 export function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isServicesOpen, setIsServicesOpen] = useState(false);
+    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
     const location = useLocation();
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export function Header() {
     // Close mobile menu on route change
     useEffect(() => {
         setIsMobileMenuOpen(false);
-        setIsServicesOpen(false);
+        setOpenDropdown(null);
     }, [location]);
 
     return (
@@ -41,25 +41,27 @@ export function Header() {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center gap-6">
+                <nav className="hidden lg:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
                     <Link to="/" className="text-sm font-bold text-black hover:text-[#EAB308] transition-colors">Home</Link>
 
-                    {/* Products Link */}
-                    <Link to="/products" className="text-sm font-bold text-black hover:text-[#EAB308] transition-colors">
-                        Products
+                    {/* Products Dropdown */}
+                    <Link
+                        to="/products"
+                        className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2"
+                    >
+                        Products <ChevronDown className="w-4 h-4" />
                     </Link>
 
                     {/* Services Dropdown */}
                     <div className="relative group">
                         <button
                             className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2"
-                            onMouseEnter={() => setIsServicesOpen(true)}
-                            onClick={() => setIsServicesOpen(!isServicesOpen)}
+                            onMouseEnter={() => setOpenDropdown('services')}
                         >
                             Services <ChevronDown className="w-4 h-4" />
                         </button>
                         <div
-                            className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] bg-white border border-gray-100 rounded-xl shadow-xl p-6 grid grid-cols-2 gap-4 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform origin-top z-50 mt-2"
+                            className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] bg-white border border-gray-100 rounded-xl shadow-xl p-6 grid grid-cols-2 gap-4 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform origin-top z-50 mt-2 text-left"
                         >
                             {services.map((service) => (
                                 <Link
@@ -79,30 +81,34 @@ export function Header() {
                         </div>
                     </div>
 
-                    <button className="text-sm font-bold text-black hover:text-[#EAB308] transition-colors">
-                        Process Automation
+                    {/* Process Automation Dropdown */}
+                    <button className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2">
+                        Process Automation Services <ChevronDown className="w-4 h-4" />
                     </button>
 
-                    <button className="text-sm font-bold text-black hover:text-[#EAB308] transition-colors">
-                        Social Media
+                    {/* Social Media Dropdown */}
+                    <button className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2">
+                        Social Media Services <ChevronDown className="w-4 h-4" />
                     </button>
 
+                    {/* More Dropdown */}
+                    <button className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2">
+                        More <ChevronDown className="w-4 h-4" />
+                    </button>
                 </nav>
 
-                {/* CTA Button */}
-                <div className="hidden md:flex items-center gap-4">
+                {/* CTA Button / Contact Us */}
+                <div className="hidden lg:flex items-center gap-4">
                     <Link to="/contact">
-                        <div className="p-[1px] rounded-full bg-gradient-to-r from-[#D946EF] to-[#8B5CF6]">
-                            <button className="px-5 py-1.5 rounded-full bg-white hover:bg-gray-50 text-black font-bold text-sm transition-all duration-300">
-                                Contact Us
-                            </button>
-                        </div>
+                        <button className="px-5 py-2 rounded-full bg-[#004d4f] hover:bg-[#00383a] text-white font-bold text-sm transition-all duration-300">
+                            Contact Us
+                        </button>
                     </Link>
                 </div>
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="md:hidden p-2 text-black"
+                    className="lg:hidden p-2 text-black z-50"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X /> : <Menu />}
@@ -111,21 +117,43 @@ export function Header() {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 p-6 flex flex-col gap-4 md:hidden shadow-lg">
-                    <Link to="/" className="text-black hover:text-[#EAB308] font-bold">Home</Link>
-                    <Link to="/contact" className="text-black hover:text-[#EAB308] font-bold">Contact</Link>
-                    <div className="border-t border-gray-100 pt-4">
-                        <span className="text-gray-400 text-xs uppercase tracking-wider mb-2 block">Services</span>
-                        {services.map((service) => (
-                            <Link
-                                key={service.id}
-                                to={service.path}
-                                className="block py-2 text-sm text-black hover:text-[#EAB308]"
-                            >
-                                {service.title}
-                            </Link>
-                        ))}
+                <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 p-6 flex flex-col gap-4 lg:hidden shadow-lg h-screen overflow-y-auto pt-4">
+                    <Link to="/" className="text-black hover:text-[#EAB308] font-bold text-lg">Home</Link>
+
+                    <Link to="/products" className="flex items-center justify-between text-black hover:text-[#EAB308] font-bold text-lg py-2">
+                        Products <ChevronDown className="w-4 h-4" />
+                    </Link>
+
+                    <div>
+                        <button onClick={() => setOpenDropdown(openDropdown === 'mobile-services' ? null : 'mobile-services')} className="flex items-center justify-between w-full text-black hover:text-[#EAB308] font-bold text-lg py-2">
+                            Services <ChevronDown className={cn("w-4 h-4 transition-transform", openDropdown === 'mobile-services' && "rotate-180")} />
+                        </button>
+                        {openDropdown === 'mobile-services' && (
+                            <div className="pl-4 space-y-2 mt-2">
+                                {services.map((service) => (
+                                    <Link
+                                        key={service.id}
+                                        to={service.path}
+                                        className="block py-2 text-sm text-gray-600 hover:text-[#EAB308]"
+                                    >
+                                        {service.title}
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
                     </div>
+
+                    <div className="text-black hover:text-[#EAB308] font-bold text-lg py-2 flex items-center justify-between">
+                        Process Automation <ChevronDown className="w-4 h-4" />
+                    </div>
+                    <div className="text-black hover:text-[#EAB308] font-bold text-lg py-2 flex items-center justify-between">
+                        Social Media <ChevronDown className="w-4 h-4" />
+                    </div>
+                    <div className="text-black hover:text-[#EAB308] font-bold text-lg py-2 flex items-center justify-between">
+                        More <ChevronDown className="w-4 h-4" />
+                    </div>
+
+                    <Link to="/contact" className="text-black hover:text-[#EAB308] font-bold text-lg py-2">Contact Us</Link>
                 </div>
             )}
         </header>
