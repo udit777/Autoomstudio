@@ -2,10 +2,12 @@ import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
 import { Play } from 'lucide-react';
 import rxIcon from '@/assets/products/ai_prescription_saathi.png'; // Reusing the icon we have
+import insightsImg from '@/assets/products/saathi_insights.jpg';
+import personImg from '@/assets/products/saathi_person.jpg';
 
 export function AiPrescriptionSaathiPage() {
     return (
-        <div className="bg-white min-h-screen pt-20">
+        <div className="bg-white min-h-screen pt-[60px]">
             {/* Header Section */}
             <div className="bg-[#004d4f] py-4 text-center">
                 <h1 className="text-white text-lg font-medium">AI Prescription Saathi</h1>
@@ -30,31 +32,25 @@ export function AiPrescriptionSaathiPage() {
                         </div>
                     </div>
 
-                    {/* Visual Section (Placeholders) */}
+                    {/* Visual Section */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* Left visual - App branding using existing icon as placeholder base */}
+                        {/* Left - App Insights Image */}
+                        <div className="rounded-lg overflow-hidden shadow-lg h-[300px] md:h-[400px] flex items-center justify-center bg-blue-50">
+                            <img src={insightsImg} alt="AI Prescription Saathi Insights" className="w-full h-full object-cover" />
+                        </div>
+
+                        {/* Right - App Branding (kept as is or updated if needed, keeping rxIcon for now as per image logic) */}
                         <div className="bg-gradient-to-br from-cyan-400 to-blue-600 h-[300px] md:h-[400px] rounded-lg flex flex-col items-center justify-center p-8 text-white shadow-lg">
                             <img src={rxIcon} alt="AI Prescription Saathi Logo" className="w-24 h-24 mb-4 rounded-xl shadow-md" />
                             <h3 className="text-3xl font-bold drop-shadow-md">AI Prescription</h3>
                             <h3 className="text-3xl font-bold drop-shadow-md">Saathi</h3>
                         </div>
-
-                        {/* Right visual - Placeholder for "Easily Get Insights" */}
-                        <div className="bg-blue-500 h-[300px] md:h-[400px] rounded-lg flex items-center justify-center relative overflow-hidden shadow-lg">
-                            <div className="absolute inset-0 bg-blue-500 flex items-center justify-center">
-                                <span className="text-white text-xl font-bold opacity-50">[Image Placeholder: Mobile App Insight View]</span>
-                            </div>
-                            <div className="relative z-10 text-center text-white p-6">
-                                <h3 className="text-2xl font-bold mb-2">Easily Get Insights of</h3>
-                                <h3 className="text-2xl font-bold">Handwritten Prescription</h3>
-                            </div>
-                        </div>
                     </div>
 
                     {/* Features & Details */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
                         {/* Text Content */}
-                        <div className="lg:col-span-2 space-y-8 text-gray-700">
+                        <div className="lg:col-span-3 space-y-8 text-gray-700">
 
                             {/* Why it matters */}
                             <div>
@@ -95,31 +91,34 @@ export function AiPrescriptionSaathiPage() {
                                         <span className="text-blue-500 mt-1.5 text-xs">◆</span>
                                         <span><strong>Peace of Mind, Not Medical Advice:</strong> AI Prescription Saathi is a record-keeper, not a doctor. It helps you keep track—but always check with your healthcare provider before making any medical decisions.</span>
                                     </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="text-blue-500 mt-1.5 text-xs">◆</span>
+                                        <span><strong>Multilingual Support:</strong> Works with both English and local language prescriptions, making healthcare accessible to everyone.</span>
+                                    </li>
                                 </ul>
                             </div>
 
-                            {/* Human Touch */}
-                            <div>
-                                <h3 className="text-xl font-bold text-[#004d4f] mb-2">The Human Touch in Digital Health</h3>
-                                <p className="leading-relaxed text-justify">
-                                    What makes AI Prescription Saathi stand out isn't just the tech—it's how it makes that tech feel approachable, like a helpful friend who's got your back. The app is designed for everyone, from young adults managing their first prescription to families caring for aging parents, and even healthcare professionals looking to streamline record-keeping.
-                                </p>
-                                <p className="leading-relaxed mt-2 text-justify">
-                                    It's simple: less stress, less confusion, more confidence. Your prescriptions, made smarter—so you can focus on what really matters: your health and peace of mind.
-                                </p>
-                            </div>
+
 
                         </div>
 
-                        {/* Right Content - Visual Placeholder for Man */}
-                        <div className="lg:col-span-1">
-                            <div className="bg-[#fef9c3] h-full min-h-[400px] rounded-lg flex items-center justify-center relative shadow-sm border border-gray-100 p-8">
-                                <div className="text-center">
-                                    <span className="text-gray-400 font-bold block mb-4">[Image Placeholder]</span>
-                                    <p className="text-gray-500 text-sm">Illustration of a person using the app on a phone.</p>
-                                </div>
+                        {/* Right Content - Visual for Man */}
+                        <div className="lg:col-span-2">
+                            <div className="bg-[#fef9c3] rounded-lg overflow-hidden relative shadow-sm border border-gray-100">
+                                <img src={personImg} alt="Person using AI Prescription Saathi" className="w-full h-full object-cover" />
                             </div>
                         </div>
+                    </div>
+
+                    {/* Human Touch - Moved below grid */}
+                    <div className="w-full">
+                        <h3 className="text-xl font-bold text-[#004d4f] mb-2">The Human Touch in Digital Health</h3>
+                        <p className="leading-relaxed text-justify text-gray-700">
+                            What makes AI Prescription Saathi stand out isn't just the tech—it's how it makes that tech feel approachable, like a helpful friend who's got your back. The app is designed for everyone, from young adults managing their first prescription to families caring for aging parents, and even healthcare professionals looking to streamline record-keeping.
+                        </p>
+                        <p className="leading-relaxed mt-2 text-justify text-gray-700">
+                            It's simple: less stress, less confusion, more confidence. Your prescriptions, made smarter—so you can focus on what really matters: your health and peace of mind.
+                        </p>
                     </div>
 
                 </div>
