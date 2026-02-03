@@ -86,18 +86,18 @@ export function Header() {
                     <div className="relative group">
                         <Link
                             to="/process-automation"
-                            className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2"
+                            className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2 whitespace-nowrap"
                         >
-                            Process Automation Services <ChevronDown className="w-4 h-4" />
+                            Process Automation <ChevronDown className="w-4 h-4" />
                         </Link>
                     </div>
 
                     {/* Social Media Services Link */}
                     <Link
                         to="/social-media-services"
-                        className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2"
+                        className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2 whitespace-nowrap"
                     >
-                        Social Media Services <ChevronDown className="w-4 h-4" />
+                        Social Media <ChevronDown className="w-4 h-4" />
                     </Link>
 
                     {/* More Dropdown */}
@@ -128,16 +128,13 @@ export function Header() {
                             </Link>
                         </div>
                     </div>
+                    {/* Contact Us Link */}
+                    <Link to="/contact" className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2">
+                        Contact Us
+                    </Link>
                 </nav>
 
-                {/* CTA Button / Contact Us */}
-                <div className="hidden lg:flex items-center gap-4">
-                    <Link to="/contact">
-                        <button className="px-5 py-2 rounded-full bg-[#004d4f] hover:bg-[#00383a] text-white font-bold text-sm transition-all duration-300">
-                            Contact Us
-                        </button>
-                    </Link>
-                </div>
+
 
                 {/* Mobile Menu Toggle */}
                 <button
