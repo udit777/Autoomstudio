@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, BookOpen, Users, Briefcase } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight, BookOpen, Users, Briefcase } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { services } from '@/data/services';
 import logo from '@/assets/logo.png';
@@ -45,12 +45,22 @@ export function Header() {
                     <Link to="/" className="text-sm font-bold text-black hover:text-[#EAB308] transition-colors">Home</Link>
 
                     {/* Products Dropdown */}
-                    <Link
-                        to="/products"
-                        className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2"
-                    >
-                        Products <ChevronDown className="w-4 h-4" />
-                    </Link>
+                    {/* Products Dropdown */}
+                    <div className="relative group">
+                        <Link
+                            to="/products"
+                            className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2"
+                        >
+                            Products <ChevronDown className="w-4 h-4" />
+                        </Link>
+                        <div
+                            className="absolute top-full left-0 w-[250px] bg-white border border-gray-100 rounded-xl shadow-xl p-4 flex flex-col gap-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform origin-top z-50 mt-2 text-left"
+                        >
+                            <Link to="/products/ai-prescription-saathi" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">AI Prescription Saathi</span>
+                            </Link>
+                        </div>
+                    </div>
 
                     {/* Services Dropdown */}
                     <div className="relative group">
@@ -62,23 +72,43 @@ export function Header() {
                             Services <ChevronDown className="w-4 h-4" />
                         </Link>
                         <div
-                            className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] bg-white border border-gray-100 rounded-xl shadow-xl p-6 grid grid-cols-2 gap-4 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform origin-top z-50 mt-2 text-left"
+                            className="absolute top-full left-0 w-80 bg-white border border-gray-100 rounded-xl shadow-xl p-0 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform origin-top z-50 mt-2 text-left flex"
                         >
-                            {services.map((service) => (
-                                <Link
-                                    key={service.id}
-                                    to={service.path}
-                                    className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item"
-                                >
-                                    <div className={cn("p-2 rounded-md bg-gray-100 text-gray-900 group-hover/item:text-[#EAB308] transition-colors")}>
-                                        <service.icon className="w-5 h-5" />
+                            {/* Left Side: Main Categories */}
+                            <div className="w-full py-2 bg-white rounded-xl">
+                                {services.map((service) => (
+                                    <div
+                                        key={service.id}
+                                        className="relative group/category"
+                                        onMouseEnter={() => setOpenDropdown(service.id)}
+                                    >
+                                        <Link
+                                            to={service.path}
+                                            className="flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-700 hover:bg-[#EAB308] hover:text-white transition-colors"
+                                        >
+                                            {service.title}
+                                            {service.subServices && <ChevronRight className="w-4 h-4" />}
+                                        </Link>
+
+                                        {/* Right Side: Sub-menu (Flyout) */}
+                                        {service.subServices && (
+                                            <div className="absolute left-full top-0 w-[400px] min-h-full bg-white border border-gray-100 rounded-xl shadow-xl py-2 invisible opacity-0 group-hover/category:visible group-hover/category:opacity-100 transition-all duration-200 ml-1">
+                                                <div className="flex flex-col">
+                                                    {service.subServices.map((subItem) => (
+                                                        <Link
+                                                            key={subItem.id}
+                                                            to={subItem.path}
+                                                            className="block px-6 py-3 text-sm text-gray-600 hover:text-[#EAB308] hover:bg-gray-50 transition-colors"
+                                                        >
+                                                            {subItem.title}
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
-                                    <div>
-                                        <div className="text-sm font-bold text-black mb-1 group-hover/item:text-[#EAB308] transition-colors">{service.title}</div>
-                                        <div className="text-xs text-gray-500 line-clamp-1">{service.description}</div>
-                                    </div>
-                                </Link>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
 
@@ -90,15 +120,52 @@ export function Header() {
                         >
                             Process Automation <ChevronDown className="w-4 h-4" />
                         </Link>
+                        <div
+                            className="absolute top-full left-0 w-[280px] bg-white border border-gray-100 rounded-xl shadow-xl p-4 flex flex-col gap-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform origin-top z-50 mt-2 text-left"
+                        >
+                            <Link to="/process-automation/automation-tool" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">Automation tool Development</span>
+                            </Link>
+                            <Link to="/process-automation/repetitive-task" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">Repetitive Task Automation</span>
+                            </Link>
+                            <Link to="/process-automation/sales-process" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">Sales Process Automation</span>
+                            </Link>
+                            <Link to="/process-automation/custom-bot" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">Custom Bot development</span>
+                            </Link>
+                        </div>
                     </div>
 
-                    {/* Social Media Services Link */}
-                    <Link
-                        to="/social-media-services"
-                        className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2 whitespace-nowrap"
-                    >
-                        Social Media <ChevronDown className="w-4 h-4" />
-                    </Link>
+                    {/* Social Media Services Dropdown */}
+                    <div className="relative group">
+                        <Link
+                            to="/social-media-services"
+                            className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2 whitespace-nowrap"
+                        >
+                            Social Media Services <ChevronDown className="w-4 h-4" />
+                        </Link>
+                        <div
+                            className="absolute top-full left-0 w-[280px] bg-white border border-gray-100 rounded-xl shadow-xl p-4 flex flex-col gap-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform origin-top z-50 mt-2 text-left"
+                        >
+                            <Link to="/social-media-management" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">Social Media Management</span>
+                            </Link>
+                            <Link to="/social-media-publishing" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">Social Media Publishing</span>
+                            </Link>
+                            <Link to="/social-media-content-creation" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">Social Media Content Creation</span>
+                            </Link>
+                            <Link to="/analytics-and-reporting" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">Analytics and Reporting</span>
+                            </Link>
+                            <Link to="/ai-driven-customer-interaction" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">AI-Driven Customer Interaction</span>
+                            </Link>
+                        </div>
+                    </div>
 
                     {/* More Dropdown */}
                     <div className="relative group">

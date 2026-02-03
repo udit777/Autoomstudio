@@ -3,9 +3,11 @@ import { Layout } from '@/components/layout/Layout';
 import { HomePage } from '@/pages/HomePage';
 import { ProductsPage } from '@/pages/ProductsPage';
 import { AiPrescriptionSaathiPage } from '@/pages/AiPrescriptionSaathiPage';
+import { AiWorkspacePage } from '@/pages/AiWorkspacePage';
 import { ServicesPage } from '@/pages/ServicesPage';
 import { ServiceDetailPage } from '@/pages/ServiceDetailPage';
-import { AboutPage, ContactPage, BlogPage, PortfolioPage, CareerPage } from '@/pages/Placeholders';
+import { ContactPage } from '@/pages/ContactPage';
+import { AboutPage, BlogPage, PortfolioPage, CareerPage } from '@/pages/Placeholders';
 import { ProcessAutomationPage } from '@/pages/ProcessAutomationPage';
 import { SocialMediaServicesPage } from '@/pages/SocialMediaServicesPage';
 import { SocialMediaManagementInfoPage } from '@/pages/SocialMediaManagementInfoPage';
@@ -37,8 +39,11 @@ function App() {
         <Route path="/products/ai-prescription-saathi" element={<AiPrescriptionSaathiPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/services/ai-workspace" element={<AiWorkspacePage />} />
         <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
+        <Route path="/services/:category/:subCategory" element={<ServiceDetailPage />} />
         <Route path="/process-automation" element={<ProcessAutomationPage />} />
+        <Route path="/process-automation/:subService" element={<ProcessAutomationPage />} />
         <Route path="/social-media-services" element={<SocialMediaServicesPage />} />
         <Route path="/more" element={<MorePage />} />
 

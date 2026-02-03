@@ -1,103 +1,212 @@
-import { Share2, Podcast, ShieldCheck, Database, Server, Smartphone, Globe, Activity, Headphones, Zap, Box } from 'lucide-react';
+import { Share2, ShieldCheck, Database, Server, Smartphone, Globe, Activity, Headphones, Zap, Box, Brain, Code, Monitor, BarChart, Lock, MessageSquare } from 'lucide-react';
 
-export const services = [
+export interface ServiceItem {
+    id: string;
+    title: string;
+    description?: string;
+    icon: any;
+    path: string;
+    subServices?: ServiceItem[];
+}
+
+export const services: ServiceItem[] = [
     {
-        id: 'social-media',
-        title: 'Social Media Management',
-        description: 'Elevate your brand with strategic content, community engagement, and data-driven growth strategies.',
-        icon: Share2,
-        color: 'text-service-social',
-        bgColor: 'bg-service-social/10',
-        path: '/services/social-media',
+        id: 'ai-workspace',
+        title: 'AI Workspace',
+        description: 'Intelligent workspaces for modern teams.',
+        icon: Brain,
+        path: '/services/ai-workspace',
     },
     {
-        id: 'bpa',
-        title: 'Business Process Automation',
-        description: 'Streamline operations with custom workflows, RPA implementation, and intelligent task automation.',
-        icon: Zap,
-        color: 'text-service-automation',
-        bgColor: 'bg-service-automation/10',
-        path: '/services/bpa',
-    },
-    {
-        id: 'infrastructure',
-        title: 'IT Infrastructure Management',
-        description: 'Ensure peak performance with proactive network monitoring, server administration, and end-user support.',
+        id: 'it-infrastructure',
+        title: 'IT Infrastructure Services',
+        description: 'Robust infrastructure for your business.',
         icon: Server,
-        color: 'text-service-infrastructure',
-        bgColor: 'bg-service-infrastructure/10',
         path: '/services/infrastructure',
-    },
-    {
-        id: 'datacenter',
-        title: 'Data Center Management',
-        description: 'Secure, reliable data center solutions focusing on integrity, disaster recovery, and compliance.',
-        icon: Database,
-        color: 'text-service-datacenter',
-        bgColor: 'bg-service-datacenter/10',
-        path: '/services/datacenter',
-    },
-    {
-        id: 'hosting',
-        title: 'Domain & Hosting Services',
-        description: 'Reliable hosting, domain management, and SSL security to keep your digital presence always online.',
-        icon: Globe,
-        color: 'text-service-hosting',
-        bgColor: 'bg-service-hosting/10',
-        path: '/services/hosting',
-    },
-    {
-        id: 'modernization',
-        title: 'Legacy System Modernization',
-        description: 'Transform outdated systems into modern, scalable solutions without business disruption.',
-        icon: Box,
-        color: 'text-service-modernization',
-        bgColor: 'bg-service-modernization/10',
-        path: '/services/modernization',
+        subServices: [
+            {
+                id: 'infra-mgmt',
+                title: 'IT Infrastructure Management Services',
+                icon: Server,
+                path: '/services/infrastructure/management'
+            },
+            {
+                id: 'datacenter',
+                title: 'Data Center Management',
+                icon: Database,
+                path: '/services/infrastructure/datacenter'
+            },
+            {
+                id: 'hosting',
+                title: 'Domain & Hosting Solutions',
+                icon: Globe,
+                path: '/services/infrastructure/hosting'
+            },
+            {
+                id: 'modernization',
+                title: 'Legacy System Modernization',
+                icon: Box,
+                path: '/services/infrastructure/modernization'
+            }
+        ]
     },
     {
         id: 'software-dev',
-        title: 'Software Development',
-        description: 'Custom web and mobile applications tailored to your unique business requirements and goals.',
-        icon: Smartphone,
-        color: 'text-service-software',
-        bgColor: 'bg-service-software/10',
-        path: '/services/software-dev',
+        title: 'Software Development Services',
+        description: 'Custom software solutions.',
+        icon: Code,
+        path: '/services/software-development',
+        subServices: [
+            {
+                id: 'web-dev',
+                title: 'Web Development Services',
+                icon: Globe,
+                path: '/services/software/web-development'
+            },
+            {
+                id: 'ui-ux',
+                title: 'UI/UX Design Services',
+                icon: Monitor,
+                path: '/services/software/ui-ux'
+            },
+            {
+                id: 'custom-soft',
+                title: 'Custom Software Development',
+                icon: Code,
+                path: '/services/software/custom'
+            },
+            {
+                id: 'opensource',
+                title: 'Open Source Software Customization',
+                icon: Share2,
+                path: '/services/software/opensource'
+            },
+            {
+                id: 'mobile-app',
+                title: 'Mobile App Development',
+                icon: Smartphone,
+                path: '/services/software/mobile'
+            },
+            {
+                id: 'qa',
+                title: 'Software Testing and Quality Assurance',
+                icon: ShieldCheck,
+                path: '/services/software/qa'
+            },
+            {
+                id: 'ecommerce',
+                title: 'E-commerce Solutions',
+                icon: Activity,
+                path: '/services/software/ecommerce'
+            }
+        ]
     },
     {
         id: 'digital-marketing',
-        title: 'Digital Marketing & PPC',
-        description: 'Drive targeted traffic and ROI with strategic PPC campaigns and performance marketing.',
-        icon: Podcast,
-        color: 'text-service-marketing',
-        bgColor: 'bg-service-marketing/10',
+        title: 'Digital Marketing and Analytics',
+        description: 'Data-driven marketing strategies.',
+        icon: BarChart,
         path: '/services/digital-marketing',
+        subServices: [
+            {
+                id: 'ppc',
+                title: 'Pay-Per-Click (PPC) Advertising',
+                icon: Zap,
+                path: '/services/marketing/ppc'
+            },
+            {
+                id: 'digital-mkt',
+                title: 'Digital Marketing Services',
+                icon: Share2,
+                path: '/services/marketing/digital'
+            },
+            {
+                id: 'social-ads',
+                title: 'Social Media Advertising',
+                icon: Share2,
+                path: '/services/marketing/social-ads'
+            },
+            {
+                id: 'seo',
+                title: 'Search Engine Optimization(SEO)',
+                icon: Activity,
+                path: '/services/marketing/seo'
+            },
+            {
+                id: 'smo',
+                title: 'Social Media Optimization (SMO)',
+                icon: Share2,
+                path: '/services/marketing/smo'
+            },
+            {
+                id: 'analytics',
+                title: 'Web & Social Analytics',
+                icon: BarChart,
+                path: '/services/marketing/analytics'
+            }
+        ]
     },
     {
-        id: 'cybersecurity',
-        title: 'Cybersecurity Services',
-        description: 'Protect your assets with advanced threat detection, vulnerability assessments, and 24/7 monitoring.',
-        icon: ShieldCheck,
-        color: 'text-service-security',
-        bgColor: 'bg-service-security/10',
-        path: '/services/cybersecurity',
+        id: 'security',
+        title: 'Security and Compliance Services',
+        description: 'Protecting your digital assets.',
+        icon: Lock,
+        path: '/services/security',
+        subServices: [
+            {
+                id: 'cybersecurity',
+                title: 'Cybersecurity Services',
+                icon: ShieldCheck,
+                path: '/services/security/cybersecurity'
+            },
+            {
+                id: 'backup-recovery',
+                title: 'Data Backup and Recovery',
+                icon: Database,
+                path: '/services/security/backup-recovery'
+            }
+        ]
     },
     {
-        id: 'devops',
-        title: 'IT Project Mgmt & DevOps',
-        description: 'Accelerate delivery with unified DevOps pipelines and expert project management methodologies.',
-        icon: Activity,
-        color: 'text-service-devops',
-        bgColor: 'bg-service-devops/10',
-        path: '/services/devops',
+        id: 'communication',
+        title: 'Communication and Collaboration',
+        description: 'Empowering team collaboration.',
+        icon: MessageSquare,
+        path: '/services/communication',
+        subServices: [
+            {
+                id: 'project-mgmt',
+                title: 'IT Project Management',
+                icon: Activity,
+                path: '/services/communication/project-mgmt'
+            },
+            {
+                id: 'cms-dev',
+                title: 'Content Management Systems (CMS) Development',
+                icon: Box,
+                path: '/services/communication/cms-dev'
+            },
+            {
+                id: 'devops-services',
+                title: 'DevOps Services',
+                icon: Server,
+                path: '/services/communication/devops'
+            }
+        ]
     },
     {
-        id: 'support',
-        title: 'Support & Maintenance',
-        description: 'Round-the-clock technical support and maintenance to ensure business continuity and efficiency.',
+        id: 'support-main',
+        title: 'Support and Maintenance',
+        description: 'Reliable support for your business.',
         icon: Headphones,
-        color: 'text-service-support',
-        bgColor: 'bg-service-support/10',
         path: '/services/support',
-    },
+        subServices: [
+            {
+                id: 'helpdesk-support',
+                title: 'IT Helpdesk and Support',
+                icon: Headphones,
+                path: '/services/support/helpdesk'
+            }
+        ]
+    }
 ];

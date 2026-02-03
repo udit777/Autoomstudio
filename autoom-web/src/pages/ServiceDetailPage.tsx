@@ -1,12 +1,25 @@
-import { useParams, Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { services } from '@/data/services';
 import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 
 export function ServiceDetailPage() {
-    const { serviceId } = useParams();
-    const service = services.find(s => s.id === serviceId);
+    const { pathname } = useLocation();
+
+    // Recursive function to find service by path
+    const findServiceByPath = (items: any[], path: string): any => {
+        for (const item of items) {
+            if (item.path === path) return item;
+            if (item.subServices) {
+                const found = findServiceByPath(item.subServices, path);
+                if (found) return found;
+            }
+        }
+        return null;
+    };
+
+    const service = findServiceByPath(services, pathname);
 
     if (!service) {
         return (
