@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, BookOpen, Users, Briefcase } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { services } from '@/data/services';
 import logo from '@/assets/logo.png';
@@ -54,12 +54,13 @@ export function Header() {
 
                     {/* Services Dropdown */}
                     <div className="relative group">
-                        <button
+                        <Link
+                            to="/services"
                             className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2"
                             onMouseEnter={() => setOpenDropdown('services')}
                         >
                             Services <ChevronDown className="w-4 h-4" />
-                        </button>
+                        </Link>
                         <div
                             className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] bg-white border border-gray-100 rounded-xl shadow-xl p-6 grid grid-cols-2 gap-4 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform origin-top z-50 mt-2 text-left"
                         >
@@ -82,19 +83,51 @@ export function Header() {
                     </div>
 
                     {/* Process Automation Dropdown */}
-                    <button className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2">
-                        Process Automation Services <ChevronDown className="w-4 h-4" />
-                    </button>
+                    <div className="relative group">
+                        <Link
+                            to="/process-automation"
+                            className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2"
+                        >
+                            Process Automation Services <ChevronDown className="w-4 h-4" />
+                        </Link>
+                    </div>
 
-                    {/* Social Media Dropdown */}
-                    <button className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2">
+                    {/* Social Media Services Link */}
+                    <Link
+                        to="/social-media-services"
+                        className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2"
+                    >
                         Social Media Services <ChevronDown className="w-4 h-4" />
-                    </button>
+                    </Link>
 
                     {/* More Dropdown */}
-                    <button className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2">
-                        More <ChevronDown className="w-4 h-4" />
-                    </button>
+                    <div className="relative group">
+                        <Link to="/more" className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2">
+                            More <ChevronDown className="w-4 h-4" />
+                        </Link>
+                        <div
+                            className="absolute top-full right-0 w-[250px] bg-white border border-gray-100 rounded-xl shadow-xl p-4 flex flex-col gap-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform origin-top z-50 mt-2 text-left"
+                        >
+                            <Link to="/blog" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <div className="p-2 rounded-md bg-gray-100 text-gray-900 group-hover/item:text-[#EAB308] transition-colors">
+                                    <BookOpen className="w-5 h-5" />
+                                </div>
+                                <span className="text-sm font-bold text-black group-hover/item:text-[#EAB308] transition-colors">Blog</span>
+                            </Link>
+                            <Link to="/about" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <div className="p-2 rounded-md bg-gray-100 text-gray-900 group-hover/item:text-[#EAB308] transition-colors">
+                                    <Users className="w-5 h-5" />
+                                </div>
+                                <span className="text-sm font-bold text-black group-hover/item:text-[#EAB308] transition-colors">About Us</span>
+                            </Link>
+                            <Link to="/careers" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <div className="p-2 rounded-md bg-gray-100 text-gray-900 group-hover/item:text-[#EAB308] transition-colors">
+                                    <Briefcase className="w-5 h-5" />
+                                </div>
+                                <span className="text-sm font-bold text-black group-hover/item:text-[#EAB308] transition-colors">Career</span>
+                            </Link>
+                        </div>
+                    </div>
                 </nav>
 
                 {/* CTA Button / Contact Us */}
@@ -130,6 +163,12 @@ export function Header() {
                         </button>
                         {openDropdown === 'mobile-services' && (
                             <div className="pl-4 space-y-2 mt-2">
+                                <Link
+                                    to="/services"
+                                    className="block py-2 text-sm font-bold text-black hover:text-[#EAB308]"
+                                >
+                                    All Services
+                                </Link>
                                 {services.map((service) => (
                                     <Link
                                         key={service.id}
@@ -143,14 +182,29 @@ export function Header() {
                         )}
                     </div>
 
-                    <div className="text-black hover:text-[#EAB308] font-bold text-lg py-2 flex items-center justify-between">
+                    <Link to="/process-automation" className="text-black hover:text-[#EAB308] font-bold text-lg py-2 flex items-center justify-between">
                         Process Automation <ChevronDown className="w-4 h-4" />
-                    </div>
-                    <div className="text-black hover:text-[#EAB308] font-bold text-lg py-2 flex items-center justify-between">
-                        Social Media <ChevronDown className="w-4 h-4" />
-                    </div>
-                    <div className="text-black hover:text-[#EAB308] font-bold text-lg py-2 flex items-center justify-between">
-                        More <ChevronDown className="w-4 h-4" />
+                    </Link>
+                    <Link to="/social-media-services" className="text-black hover:text-[#EAB308] font-bold text-lg py-2 flex items-center justify-between">
+                        Social Media Services <ChevronDown className="w-4 h-4" />
+                    </Link>
+                    <div>
+                        <button onClick={() => setOpenDropdown(openDropdown === 'more' ? null : 'more')} className="flex items-center justify-between w-full text-black hover:text-[#EAB308] font-bold text-lg py-2">
+                            More <ChevronDown className={cn("w-4 h-4 transition-transform", openDropdown === 'more' && "rotate-180")} />
+                        </button>
+                        {openDropdown === 'more' && (
+                            <div className="pl-4 space-y-2 mt-2">
+                                <Link to="/blog" className="block py-2 text-sm text-gray-600 hover:text-[#EAB308] flex items-center gap-2">
+                                    <BookOpen className="w-4 h-4" /> Blog
+                                </Link>
+                                <Link to="/about" className="block py-2 text-sm text-gray-600 hover:text-[#EAB308] flex items-center gap-2">
+                                    <Users className="w-4 h-4" /> About Us
+                                </Link>
+                                <Link to="/careers" className="block py-2 text-sm text-gray-600 hover:text-[#EAB308] flex items-center gap-2">
+                                    <Briefcase className="w-4 h-4" /> Career
+                                </Link>
+                            </div>
+                        )}
                     </div>
 
                     <Link to="/contact" className="text-black hover:text-[#EAB308] font-bold text-lg py-2">Contact Us</Link>
