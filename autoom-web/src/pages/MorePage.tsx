@@ -2,26 +2,22 @@ import { Link } from 'react-router-dom';
 import { Section } from '@/components/ui/Section';
 import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 
-import blogIcon from '@/assets/more/blog_icon.png';
-import aboutIcon from '@/assets/more/about_icon.png';
-import careerIcon from '@/assets/more/career_icon.png';
-
 const sections = [
     {
         title: "BLOG",
-        icon: blogIcon,
+        icon: "https://images.unsplash.com/photo-1499750310159-52f0f837ce85?q=80&w=2073&auto=format&fit=crop",
         link: "/blog",
         desc: "Read our latest updates"
     },
     {
         title: "About Us",
-        icon: aboutIcon,
+        icon: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
         link: "/about",
         desc: "Meet the team"
     },
     {
         title: "Career",
-        icon: careerIcon,
+        icon: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop",
         link: "/careers",
         desc: "Join our journey"
     }
