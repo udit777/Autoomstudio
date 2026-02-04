@@ -22,109 +22,129 @@ import { Share2, Mail, Users, Search, Phone, Database, Briefcase, Zap, CheckCirc
 const agents = [
     {
         id: 'social-media',
-        name: 'AI Social Media Agent',
+        name: 'AI Social Media Agent 🤖',
         icon: Share2,
         color: 'bg-green-500',
+        image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop', // Placeholder
         content: {
             title: 'Social Media AI Agent',
             description: "Autoom Studio's AI Social Media Agent is an advanced automation solution designed to revolutionize how businesses manage their online presence. As part of Autoom Studio's comprehensive AI Workspace, this agent seamlessly integrates artificial intelligence with social media strategies to enhance engagement, streamline operations, and drive measurable results.",
             features: [
-                'AI-Driven Customer Interaction',
-                'Smart Scheduling',
-                'Content Creation Support',
-                'Comprehensive Analytics and Reporting'
+                'AI-Driven Customer Interaction: Delivers instant, intelligent responses to customer inquiries, comments, and messages, fostering real-time engagement.',
+                'Smart Scheduling: Optimizes post timings based on audience activity analysis to maximize reach and impact.',
+                'Content Creation Support: Generates creative content ideas, captions, and visuals tailored to your brand\'s voice and audience preferences.',
+                'Comprehensive Analytics and Reporting: Provides detailed insights into campaign performance, audience demographics, and engagement metrics to refine strategies.'
             ],
             footer: "Designed for marketers, entrepreneurs, and content creators, Autoom Studio's AI Social Media Agent empowers users to maintain a consistent and engaging online presence. By automating routine tasks and providing intelligent insights, it allows businesses to focus on strategic growth and audience connection."
         }
     },
     {
         id: 'email-assistant',
-        name: 'AI Email assistant agent',
+        name: 'AI Email assistant agent 🤖',
         icon: Mail,
-        color: 'bg-yellow-500',
+        color: 'bg-green-500',
+        image: 'https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=2070&auto=format&fit=crop', // Placeholder
         content: {
-            title: 'AI Email Assistant',
-            description: 'Automate your inbox management with intelligence.',
+            title: 'Personal Email AI Agent',
+            description: "The AI Email Assistant Agent is a smart automation tool built to optimize and streamline email communications for businesses and professionals. Powered by advanced artificial intelligence, this agent can manage large volumes of emails, generate personalized replies, and ensure timely follow-ups—all with minimal human intervention. Designed to enhance productivity and customer engagement, it prioritizes messages based on urgency and integrates smoothly with existing email systems.",
             features: [
-                'Smart Sorting',
-                'Auto-Responses',
-                'Priority Flagging'
-            ]
+                'Automated Email Management: Sorts, categorizes, and prioritizes incoming emails to keep your inbox organized and manageable.',
+                'Intelligent Drafting: Drafts professional and context-aware responses to common inquiries, saving you time on repetitive communication.',
+                'Priority Sorting: Highlights urgent emails that require immediate attention, ensuring you never miss critical updates or opportunities.',
+                'Seamless CRM Integration: Syncs email interactions with your CRM system, keeping your customer records up-to-date automatically.'
+            ],
+            footer: "This AI assistant is ideal for teams seeking to reduce manual workload, increase responsiveness, and deliver a consistent, high-quality communication experience across the board."
         }
     },
     {
         id: 'crm-agent',
-        name: 'AI Enable CRM Agent',
+        name: 'AI Enable CRM Agent 🤖',
         icon: Users,
-        color: 'bg-orange-500',
+        color: 'bg-green-500',
+        image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop', // Placeholder
         content: {
-            title: 'AI Enabled CRM Agent',
-            description: 'Enhance your customer relationships with AI insights.',
+            title: 'AI Enable CRM Agent 🤖',
+            description: "Autoom Studio's AI CRM Agent, part of the AuSoMe Manager platform, is an advanced automation tool designed to revolutionize customer relationship management. By integrating artificial intelligence, this agent automates and enhances various CRM functions, enabling businesses to engage with customers more effectively and efficiently.",
             features: [
-                'Lead Scoring',
-                'Automated Follow-ups',
-                'Customer Sentiment Analysis'
-            ]
+                'Automated Customer Interactions: The AI CRM Agent can autonomously handle customer communications, providing timely and personalized responses that improve customer satisfaction and loyalty.',
+                'Intelligent Lead Management: By analyzing customer data and behavior, the agent identifies and prioritizes potential leads, automating follow-up actions to accelerate the sales cycle.',
+                'Seamless Integration: The agent integrates smoothly with existing CRM systems and tools, ensuring a unified approach to customer data management and communication.',
+                'Real-Time Analytics: Gain actionable insights through real-time analytics, enabling data-driven decisions to refine customer engagement strategies and enhance sales performance.'
+            ],
+            footer: "Designed for businesses aiming to enhance efficiency and customer satisfaction, Autoom Studio's AI CRM Agent empowers teams to focus on strategic initiatives while the agent manages routine CRM tasks autonomously."
         }
     },
     {
         id: 'research-assistant',
-        name: 'AI Research Assistant',
+        name: 'AI Research Assistant 🤖',
         icon: Search,
-        color: 'bg-yellow-600',
+        color: 'bg-green-500',
+        image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=2074&auto=format&fit=crop', // Placeholder
         content: {
             title: 'AI Research Assistant',
-            description: 'Deep dive research capabilities at your fingertips.',
+            description: "The AI Research Assistant from Autoom Studio's AI Workspace is an innovative tool designed to streamline the research process with the power of artificial intelligence. Whether you're a researcher, analyst, or business professional, this AI-powered assistant automates data gathering, analysis, and reporting, enabling more efficient and insightful research.",
             features: [
-                'Data Mining',
-                'Trend Analysis',
-                'Report Generation'
-            ]
+                'Automated Research: The AI Research Assistant autonomously collects relevant data from a variety of sources, reducing the manual effort and time typically required for research tasks.',
+                'Advanced Data Analysis: Using sophisticated algorithms, the assistant processes and analyzes the gathered data to extract meaningful patterns, trends, and insights, supporting data-driven decisions.',
+                'Easy Integration: The assistant easily integrates with your existing research tools and platforms, creating a seamless workflow for teams and individuals alike.',
+                'Real-Time Reporting: It provides real-time analytics and reporting, enabling instant access to research findings and helping refine strategies as needed.'
+            ],
+            footer: "Designed for professionals across industries, the AI Research Assistant helps users focus on high-value tasks while the AI efficiently handles the routine, ensuring productivity and accuracy."
         }
     },
     {
         id: 'voice-agent',
-        name: 'AI voice calling agent',
+        name: 'AI voice calling agent 🤖',
         icon: Phone,
-        color: 'bg-yellow-500',
+        color: 'bg-green-500',
+        image: 'https://images.unsplash.com/photo-1557200130-97276ddc360a?q=80&w=2070&auto=format&fit=crop', // Placeholder
         content: {
             title: 'AI Voice Calling Agent',
-            description: 'Human-like voice interactions for support and sales.',
+            description: "Autoom Studio's AI Voice Calling Agent, integrated within the AuSoMe Manager platform, is a state-of-the-art automation tool designed to revolutionize customer communication. This intelligent agent leverages advanced artificial intelligence to handle voice-based interactions, enabling businesses to engage with customers more efficiently and effectively.",
             features: [
-                'Natural Language Processing',
-                'Call Routing',
-                'Sentiment Detection'
-            ]
+                'Automated Voice Interactions: The AI Voice Calling Agent autonomously manages voice calls, providing timely and personalized responses to customer inquiries, thereby enhancing customer satisfaction and reducing response times.',
+                'Seamless Integration: This agent integrates smoothly with existing communication systems and customer relationship management (CRM) platforms, ensuring a cohesive workflow and consistent communication across channels.',
+                'Real-Time Analytics: Gain actionable insights through real-time analytics, enabling data-driven decisions to refine communication strategies and improve customer engagement.',
+                '24/7 Availability: The AI Voice Calling Agent operates round-the-clock, ensuring that customer inquiries are addressed promptly, regardless of time, thereby improving accessibility and customer experience.'
+            ],
+            footer: "Designed for businesses aiming to enhance efficiency and customer satisfaction, Autoom Studio's AI Voice Calling Agent empowers teams to focus on strategic initiatives while the agent manages routine voice interactions autonomously."
         }
     },
     {
         id: 'lead-manager',
-        name: 'AI Lead Generation Manager',
+        name: 'AI Lead Generation Manager 🤖',
         icon: Briefcase,
-        color: 'bg-yellow-500', // Color from screenshot seems consistent yellow/orange
+        color: 'bg-green-500',
+        image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop',
         content: {
-            title: 'AI Lead Generation Manager',
-            description: 'Automate your lead gen pipeline.',
+            title: 'AI Lead Generator Agent',
+            description: "The AI Lead Generator Manager from Autoom Studio's AI Workspace is an advanced automation tool designed to revolutionize the lead generation process for businesses. Leveraging the power of artificial intelligence, this agent automates the discovery and engagement of potential customers, enabling businesses to focus on closing deals and building relationships.",
             features: [
-                'Lead Qualification',
-                'Outreach Automation',
-                'Pipeline Management'
-            ]
+                'Automated Lead Discovery: The AI Lead Generator Manager autonomously identifies and compiles a list of 500 potential leads per segment every month, with the capability to generate up to 1,500 leads for a product.',
+                'Multi-Channel Outreach: Utilizing a combined messaging strategy across email and LinkedIn, the agent develops and sends personalized message sequences to engage contacts effectively.',
+                'Dedicated Email Network: Positive replies are redirected to your primary email through a dedicated email network, ensuring seamless communication.',
+                'Safe LinkedIn Usage: The agent engages with leads in your LinkedIn inbox using a dedicated IP, ensuring unique and personalized messaging.',
+                'Sales Opportunity Focus: The agent is designed to engage only with sales opportunities, ensuring that your team focuses on high-potential leads.'
+            ],
+            footer: "Designed for businesses aiming to enhance efficiency and customer acquisition, Autoom Studio's AI Lead Generator Manager empowers teams to focus on strategic initiatives while the agent manages routine lead generation tasks autonomously."
         }
     },
     {
         id: 'data-analyst',
-        name: 'AI Data Analyst agent',
+        name: 'AI Data Analyst agent 🤖',
         icon: Database,
-        color: 'bg-yellow-500',
+        color: 'bg-green-500',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
         content: {
             title: 'AI Data Analyst Agent',
-            description: 'Turn data into actionable insights instantly.',
+            description: "The AI Data Analyst Agent is a powerful tool designed to automate and enhance the data analysis process, providing businesses with fast and accurate insights. Built to integrate seamlessly with existing workflows, this AI-powered agent transforms raw data into valuable business intelligence, enabling informed decision-making without the need for extensive manual effort.",
             features: [
-                'Predictive Analytics',
-                'Visual Reporting',
-                'Real-time Monitoring'
-            ]
+                'Automated Data Analysis: The AI Data Analyst Agent automatically processes large datasets, extracting meaningful insights by identifying trends, correlations, and patterns.',
+                'Real-Time Reporting: The agent generates dynamic, real-time reports that help businesses stay updated with the latest data, empowering teams to make timely decisions.',
+                'Seamless Integration: It integrates effortlessly with existing data platforms, ensuring a smooth workflow and helping businesses manage their data from multiple sources in one place.',
+                'Customizable Insights: Users can configure the agent to focus on specific KPIs or metrics, making the analysis tailored to their business needs and objectives.'
+            ],
+            footer: "Designed for businesses of all sizes, the AI Data Analyst Agent frees up valuable time by automating routine analysis tasks, allowing teams to focus on strategic actions that drive growth."
         }
     }
 ];
@@ -134,39 +154,39 @@ export function AiWorkspacePage() {
     const activeAgent = agents.find(a => a.id === activeAgentId) || agents[0];
 
     return (
-        <div className="min-h-screen bg-gray-50 pt-[80px]"> {/* Offset for fixed header */}
+        <div className="min-h-screen bg-white pt-[57px]"> {/* Offset for fixed header */}
             {/* Hero Header */}
-            <div className="bg-black text-white py-16 text-center relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center"></div>
+            <div
+                className="relative py-24 text-center overflow-hidden bg-cover bg-center"
+                style={{ backgroundImage: "url('https://autoomstudio.com/wp-content/uploads/2025/04/image_2025-04-29_12-42-16.png')" }}
+            >
+                <div className="absolute inset-0 bg-black/60"></div> {/* Dark overlay for readability */}
                 <div className="relative z-10 container mx-auto px-4">
-                    <h1 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-4">
-                        AI Workspace - AuSoMeMgr
-                        <span className="text-4xl">🤖</span>
+                    <h1 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-2 text-white">
+                        AI Workspace - AuSoMeMgr🤖
                     </h1>
                 </div>
             </div>
 
             {/* Intro Section */}
-            <Section className="bg-white">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div className="relative">
-                        {/* Placeholder for the Robot Image */}
-                        <div className="rounded-xl overflow-hidden shadow-2xl bg-blue-100 min-h-[300px] flex items-center justify-center">
-                            {/* Ideally import the image here. For now using a representative placeholder style */}
+            <Section className="bg-white pt-8 pb-2 md:pt-12 md:pb-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div className="relative min-h-[400px] md:min-h-0">
+                        {/* Robot Image */}
+                        <div className="absolute inset-0 rounded-xl overflow-hidden shadow-2xl bg-blue-100">
                             <img
-                                src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2006&auto=format&fit=crop"
+                                src="https://autoomstudio.com/wp-content/uploads/2025/04/Smart-AI.png"
                                 alt="AuSoMeMgr Robot"
                                 className="w-full h-full object-cover"
                             />
-                            {/* If we have the specific asset, we'd use it. User screenshot shows a specific 3D robot. */}
                         </div>
                     </div>
-                    <div>
-                        <h2 className="text-3xl font-bold font-heading mb-6 text-[#EAB308]">SMART AI AGENT WORKFLOWS</h2>
-                        <p className="text-gray-600 mb-6 leading-relaxed">
-                            <strong>AuSoMeMgr.com</strong> is your ultimate AI workspace, offering a full suite of intelligent agents designed to streamline and supercharge your professional tasks. Repeated activities and workflows for daily operations like research on the web, communication with customers, data analysis, task assignments, managing your social media presence, handling emails, creating and organizing documents, managing contracts, voice calling, and AI-assisted interviews—AuSoMeMgr.com has a custom AI agent available for it.
+                    <div className="bg-gray-900 p-8 md:p-12 rounded-xl h-full flex flex-col justify-center shadow-2xl">
+                        <h2 className="text-3xl font-bold font-heading mb-6 text-white">SMART AI AGENT WORKFLOWS</h2>
+                        <p className="text-gray-300 mb-6 leading-relaxed">
+                            <strong className="text-[#EAB308]">AuSoMeMgr.com</strong> is your ultimate AI workspace, offering a full suite of intelligent agents designed to streamline and supercharge your professional tasks. Repeated activities and workflows for daily operations like research on the web, communication with customers, data analysis, task assignments, managing your social media presence, handling emails, creating and organizing documents, managing contracts, voice calling, and AI-assisted interviews—AuSoMeMgr.com has a custom AI agent available for it.
                         </p>
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-gray-300 leading-relaxed">
                             AuSoMeMgr.com custom designs each AI agent to optimize efficiency, enhance productivity, and free up your time for more strategic and creative pursuits. Whether you are a business professional, entrepreneur, or content creator, AuSoMeMgr.com provides cutting-edge AI solutions tailored to meet all your modern workflow needs in one powerful platform.
                         </p>
                     </div>
@@ -174,61 +194,66 @@ export function AiWorkspacePage() {
             </Section>
 
             {/* Agents Tab Section */}
-            <Section className="bg-gray-900 text-white py-20">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 rounded-xl overflow-hidden shadow-2xl border border-gray-800">
+            <Section className="bg-white pt-2 pb-8 md:pt-4 md:pb-12">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     {/* Sidebar */}
-                    <div className="bg-[#EAB308]/10 backdrop-blur-sm lg:col-span-1 border-r border-gray-800">
+                    <div className="flex flex-col gap-3 lg:col-span-1 h-full">
                         {agents.map((agent) => (
                             <button
                                 key={agent.id}
                                 onClick={() => setActiveAgentId(agent.id)}
-                                className={`w-full text-left px-6 py-4 flex items-center gap-3 transition-all duration-200 border-b border-gray-800/50 hover:bg-[#EAB308]/20
-                                    ${activeAgentId === agent.id ? `${agent.color} text-white font-bold` : 'text-gray-300 hover:text-white'}
+                                className={`w-full text-left px-6 py-4 flex items-center gap-3 transition-all duration-200 rounded-lg shadow-sm font-bold text-white flex-1
+                                    ${activeAgentId === agent.id ? 'bg-[#5FDA70]' : 'bg-[#EAB308] hover:bg-[#D9A507]'}
                                 `}
                             >
-                                {activeAgentId === agent.id && <Zap className="w-4 h-4 fill-current" />}
-                                {agent.name}
-                                {activeAgentId === agent.id && <img src="https://flagcdn.com/w20/us.png" className="w-4 h-auto ml-auto opacity-0" alt="" />} {/* Spacer hack or icon */}
+                                <span className="flex-1">{agent.name}</span>
                             </button>
                         ))}
                     </div>
 
                     {/* Content Area */}
-                    <div className="lg:col-span-2 bg-gray-950 p-8 md:p-12 relative overflow-hidden">
-                        {/* Background Decoration */}
-                        <div className="absolute top-0 right-0 p-12 opacity-5">
-                            <activeAgent.icon className="w-64 h-64" />
-                        </div>
+                    <div
+                        className="lg:col-span-2 rounded-xl overflow-hidden shadow-2xl relative min-h-[600px] text-white bg-cover bg-center"
+                        style={{ backgroundImage: `url('${activeAgent.image}')` }}
+                    >
+                        <div className="absolute inset-0 bg-black/70"></div> {/* Dark Overlay */}
 
-                        <div className="relative z-10">
-                            <h3 className="text-3xl font-bold mb-2">{activeAgent.content.title}</h3>
-                            <div className="w-20 h-1 bg-[#EAB308] mb-6"></div>
+                        <div className="relative z-10 p-8 md:p-12 h-full flex flex-col justify-center">
+                            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">{activeAgent.content.title}</h3>
 
-                            <p className="text-gray-300 mb-8 leading-relaxed text-lg">
+                            <p className="text-gray-200 mb-8 leading-relaxed text-sm md:text-base">
                                 {activeAgent.content.description}
                             </p>
 
                             <div className="mb-8">
-                                <h4 className="text-[#EAB308] font-bold mb-4 uppercase tracking-wider text-sm">Key Features</h4>
-                                <ul className="space-y-3">
+                                <h4 className="font-bold mb-4 uppercase tracking-wider text-sm text-white">KEY FEATURES</h4>
+                                <ul className="space-y-1">
                                     {activeAgent.content.features?.map((feature, idx) => (
-                                        <li key={idx} className="flex items-center gap-3 text-gray-300">
-                                            <CheckCircle className="w-5 h-5 text-[#EAB308]" />
-                                            {feature}
+                                        <li key={idx} className="flex items-start gap-2 text-gray-200 text-sm font-semibold">
+                                            <span>{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
 
                             {activeAgent.content.footer && (
-                                <p className="text-gray-400 text-sm mb-8 leading-relaxed border-l-2 border-gray-800 pl-4 italic">
+                                <p className="text-gray-300 text-sm mb-8 leading-relaxed italic">
                                     {activeAgent.content.footer}
                                 </p>
                             )}
 
-                            <Button className="bg-[#EAB308] hover:bg-[#CA9A00] text-black font-bold rounded-full px-8 py-6 text-lg">
-                                Access AuSoMeMgr <ArrowRight className="w-5 h-5 ml-2" />
-                            </Button>
+                            <div className="text-center">
+                                <a
+                                    href="https://ausomemgr.com/managers"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block"
+                                >
+                                    <Button className="bg-[#E9762B] hover:bg-[#d66a25] text-white font-bold rounded-full px-8 py-3 text-lg border-2 border-white/20">
+                                        Access Ausomemgr
+                                    </Button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
