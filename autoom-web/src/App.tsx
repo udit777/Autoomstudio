@@ -15,6 +15,10 @@ import { SocialMediaPublishingInfoPage } from '@/pages/SocialMediaPublishingInfo
 import { SocialMediaContentCreationInfoPage } from '@/pages/SocialMediaContentCreationInfoPage';
 import { AnalyticsReportingInfoPage } from '@/pages/AnalyticsReportingInfoPage';
 import { AiInteractionInfoPage } from '@/pages/AiInteractionInfoPage';
+import { ITInfrastructurePage } from '@/pages/ITInfrastructurePage';
+import { SoftwareDevelopmentPage } from '@/pages/SoftwareDevelopmentPage';
+import { DigitalMarketingPage } from '@/pages/DigitalMarketingPage';
+import { SecurityCompliancePage } from '@/pages/SecurityCompliancePage';
 import { MorePage } from '@/pages/MorePage';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -45,6 +49,10 @@ function App() {
         <Route path="/process-automation" element={<ProcessAutomationPage />} />
         <Route path="/process-automation/:subService" element={<ProcessAutomationPage />} />
         <Route path="/social-media-services" element={<SocialMediaServicesPage />} />
+        <Route path="/it-infrastructure-services" element={<ITInfrastructurePage />} />
+        <Route path="/software-development-services" element={<SoftwareDevelopmentPage />} />
+        <Route path="/digital-marketing-analytics" element={<DigitalMarketingPage />} />
+        <Route path="/security-compliance-services" element={<SecurityCompliancePage />} />
         <Route path="/more" element={<MorePage />} />
 
         {/* Social Media Details */}

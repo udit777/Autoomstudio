@@ -22,7 +22,7 @@ export const services: ServiceItem[] = [
         title: 'IT Infrastructure Services',
         description: 'Robust infrastructure for your business.',
         icon: Server,
-        path: '/services/infrastructure',
+        path: '/it-infrastructure-services',
         subServices: [
             {
                 id: 'infra-mgmt',
@@ -55,7 +55,7 @@ export const services: ServiceItem[] = [
         title: 'Software Development Services',
         description: 'Custom software solutions.',
         icon: Code,
-        path: '/services/software-development',
+        path: '/software-development-services',
         subServices: [
             {
                 id: 'web-dev',
@@ -106,7 +106,7 @@ export const services: ServiceItem[] = [
         title: 'Digital Marketing and Analytics',
         description: 'Data-driven marketing strategies.',
         icon: BarChart,
-        path: '/services/digital-marketing',
+        path: '/digital-marketing-analytics',
         subServices: [
             {
                 id: 'ppc',
@@ -151,7 +151,7 @@ export const services: ServiceItem[] = [
         title: 'Security and Compliance Services',
         description: 'Protecting your digital assets.',
         icon: Lock,
-        path: '/services/security',
+        path: '/security-compliance-services',
         subServices: [
             {
                 id: 'cybersecurity',
