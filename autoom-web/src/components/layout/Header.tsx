@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, ChevronRight, BookOpen, Users, Briefcase } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight, BookOpen, Users, Briefcase, CreditCard } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { services } from '@/data/services';
 import { products } from '@/data/products';
@@ -157,6 +157,12 @@ export function Header() {
                         <div
                             className="absolute top-full right-0 w-[250px] bg-white border border-gray-100 rounded-xl shadow-xl p-4 flex flex-col gap-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform origin-top z-50 mt-2 text-left"
                         >
+                            <Link to="/pricing" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                                <div className="p-2 rounded-md bg-gray-100 text-gray-900 group-hover/item:text-[#EAB308] transition-colors">
+                                    <CreditCard className="w-5 h-5" />
+                                </div>
+                                <span className="text-sm font-bold text-black group-hover/item:text-[#EAB308] transition-colors">Pricing</span>
+                            </Link>
                             <Link to="/blog" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
                                 <div className="p-2 rounded-md bg-gray-100 text-gray-900 group-hover/item:text-[#EAB308] transition-colors">
                                     <BookOpen className="w-5 h-5" />
@@ -256,6 +262,9 @@ export function Header() {
                         </button>
                         {openDropdown === 'more' && (
                             <div className="pl-4 space-y-2 mt-2">
+                                <Link to="/pricing" className="block py-2 text-sm text-gray-600 hover:text-[#EAB308] flex items-center gap-2">
+                                    <CreditCard className="w-4 h-4" /> Pricing
+                                </Link>
                                 <Link to="/blog" className="block py-2 text-sm text-gray-600 hover:text-[#EAB308] flex items-center gap-2">
                                     <BookOpen className="w-4 h-4" /> Blog
                                 </Link>

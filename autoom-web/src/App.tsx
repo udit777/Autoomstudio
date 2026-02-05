@@ -7,7 +7,9 @@ import { AiWorkspacePage } from '@/pages/AiWorkspacePage';
 import { ServicesPage } from '@/pages/ServicesPage';
 import { ServiceDetailPage } from '@/pages/ServiceDetailPage';
 import { ContactPage } from '@/pages/ContactPage';
-import { AboutPage, BlogPage, PortfolioPage, CareerPage } from '@/pages/Placeholders';
+import { AboutPage } from '@/pages/AboutPage';
+import { CareerPage } from '@/pages/CareerPage';
+import { BlogPage, PortfolioPage } from '@/pages/Placeholders';
 import { ProcessAutomationPage } from '@/pages/ProcessAutomationPage';
 import { SocialMediaServicesPage } from '@/pages/SocialMediaServicesPage';
 import { SocialMediaManagementInfoPage } from '@/pages/SocialMediaManagementInfoPage';
@@ -21,6 +23,7 @@ import { DigitalMarketingPage } from '@/pages/DigitalMarketingPage';
 import { SecurityCompliancePage } from '@/pages/SecurityCompliancePage';
 import { CommunicationCollaborationPage } from '@/pages/CommunicationCollaborationPage';
 import { SupportMaintenancePage } from '@/pages/SupportMaintenancePage';
+import { PricingPage } from '@/pages/PricingPage';
 import { MorePage } from '@/pages/MorePage';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -57,6 +60,7 @@ function App() {
         <Route path="/security-compliance-services" element={<SecurityCompliancePage />} />
         <Route path="/communication-collaboration" element={<CommunicationCollaborationPage />} />
         <Route path="/support-and-maintenance" element={<SupportMaintenancePage />} />
+        <Route path="/pricing" element={<PricingPage />} />
         <Route path="/more" element={<MorePage />} />
 
         {/* Social Media Details */}
