@@ -19,6 +19,8 @@ import { ITInfrastructurePage } from '@/pages/ITInfrastructurePage';
 import { SoftwareDevelopmentPage } from '@/pages/SoftwareDevelopmentPage';
 import { DigitalMarketingPage } from '@/pages/DigitalMarketingPage';
 import { SecurityCompliancePage } from '@/pages/SecurityCompliancePage';
+import { CommunicationCollaborationPage } from '@/pages/CommunicationCollaborationPage';
+import { SupportMaintenancePage } from '@/pages/SupportMaintenancePage';
 import { MorePage } from '@/pages/MorePage';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -53,6 +55,8 @@ function App() {
         <Route path="/software-development-services" element={<SoftwareDevelopmentPage />} />
         <Route path="/digital-marketing-analytics" element={<DigitalMarketingPage />} />
         <Route path="/security-compliance-services" element={<SecurityCompliancePage />} />
+        <Route path="/communication-collaboration" element={<CommunicationCollaborationPage />} />
+        <Route path="/support-and-maintenance" element={<SupportMaintenancePage />} />
         <Route path="/more" element={<MorePage />} />
 
         {/* Social Media Details */}

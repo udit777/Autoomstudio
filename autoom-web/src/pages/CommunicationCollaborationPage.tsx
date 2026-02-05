@@ -4,49 +4,67 @@ import { cn } from '@/lib/utils';
 import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const securityServices = [
+const communicationServices = [
     {
-        id: 'cybersecurity',
-        title: 'Cybersecurity Services',
+        id: 'it-project-management',
+        title: 'IT Project Management',
         content: {
-            title: 'Cybersecurity Services',
+            title: 'IT Project Management',
             description: (
                 <ul className="list-none space-y-2 text-sm md:text-base">
-                    <li>Identify and eliminate potential vulnerabilities in your systems with rigorous testing and proactive measures.</li>
-                    <li>Safeguard your network endpoints from malicious activities, ensuring a secure and productive digital environment.</li>
-                    <li>Build an impenetrable barrier around your network infrastructure and monitor it constantly to keep cyber threats at bay.</li>
-                    <li>Centralize and analyze security event data for early detection of threats, providing a comprehensive view of your cybersecurity landscape.</li>
-                    <li>Securely manage user identities and control access privileges to prevent unauthorized entry and data breaches.</li>
-                    <li>Develop a comprehensive strategy to effectively respond to and recover from cyber incidents, minimizing downtime and data loss.</li>
-                    <li>Stay one step ahead of cyber adversaries with real-time threat intelligence, enabling proactive defense measures.</li>
-                    <li>Leverage our experts and cutting-edge technology to detect and respond to threats in real-time, ensuring a proactive defense posture.</li>
-                    <li>Rapid recovery solutions to mitigate the impact of ransomware attacks and restore normal operations.</li>
-                    <li>In-depth analysis to identify the root cause of incidents, providing critical insights for future prevention.</li>
+                    <li>We Develop a detailed project plan with timelines and milestones.</li>
+                    <li>Monitor team workload and optimize resource allocation.</li>
+                    <li>Identify and assess potential risks.</li>
+                    <li>Develop risk mitigation strategies.</li>
+                    <li>Regularly update stakeholders on project progress.</li>
+                    <li>Implement cost control measures.</li>
+                    <li>Develop and manage project budgets.</li>
+                    <li>Conduct regular quality assessments.</li>
+                    <li>Implement quality standards and processes.</li>
+                    <li>Develop strategies for handling project changes.</li>
+                    <li>Manage relationships with external vendors.</li>
+                    <li>We Offer services for developing custom software solutions and Manage the entire software development lifecycle.</li>
+                    <li>We Provide analytics for continuous improvement.</li>
+                    <li>Ensure data backup and recovery processes are robust.</li>
+                    <li>Streamlined incident reporting system.</li>
+                    <li>24/7 support system.</li>
                 </ul>
             ),
-            learnMoreText: 'Learn more about Cybersecurity Services...',
+            learnMoreText: 'Learn more about IT Project Management...',
             learnMoreLink: '#',
             accessLink: '/contact',
-            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop'
+            image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop'
         }
     },
     {
-        id: 'backup-recovery',
-        title: 'Data Backup and Recovery',
+        id: 'cms-development',
+        title: 'Content Management Systems (CMS) Development',
         content: {
-            title: 'Data Backup and Recovery',
-            description: 'Ensure business continuity with our robust data backup and recovery solutions. We provide automated backups, secure storage, and rapid recovery options to protect your critical data from loss or corruption. Don\'t let data loss cripple your business; stay prepared with our reliable services.',
-            learnMoreText: 'Learn more about Data Backup and Recovery...',
+            title: 'Content Management Systems (CMS) Development',
+            description: 'Empower your team with flexible and scalable Content Management Systems. We develop custom CMS solutions that allow you to easily manage, update, and publish content without technical expertise, ensuring your website remains dynamic and engaging.',
+            learnMoreText: 'Learn more about CMS Development...',
             learnMoreLink: '#',
             accessLink: '/contact',
-            image: 'https://images.unsplash.com/photo-1544396821-4dd40b938ad3?q=80&w=2073&auto=format&fit=crop'
+            image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2074&auto=format&fit=crop'
+        }
+    },
+    {
+        id: 'devops-services',
+        title: 'DevOps Services',
+        content: {
+            title: 'DevOps Services',
+            description: 'Streamline your software development and operations with our DevOps services. We automate workflows, improve collaboration, and accelerate delivery, ensuring high-quality software releases and robust infrastructure management.',
+            learnMoreText: 'Learn more about DevOps Services...',
+            learnMoreLink: '#',
+            accessLink: '/contact',
+            image: 'https://images.unsplash.com/photo-1667372393119-c85c020799a3?q=80&w=2670&auto=format&fit=crop'
         }
     }
 ];
 
-export function SecurityCompliancePage() {
-    const [activeTab, setActiveTab] = useState(securityServices[0].id);
-    const activeService = securityServices.find(s => s.id === activeTab) || securityServices[0];
+export function CommunicationCollaborationPage() {
+    const [activeTab, setActiveTab] = useState(communicationServices[0].id);
+    const activeService = communicationServices.find(s => s.id === activeTab) || communicationServices[0];
 
     return (
         <div className="bg-[#115e59] min-h-screen relative font-sans">
@@ -71,13 +89,12 @@ export function SecurityCompliancePage() {
 
             {/* Hero Section */}
             <div className="relative h-[400px] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop')] bg-cover bg-center">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2684&auto=format&fit=crop')] bg-cover bg-center">
                     <div className="absolute inset-0 bg-black/50"></div>
                 </div>
-
-                <div className="relative z-10 text-center px-4">
-                    <h1 className="text-4xl md:text-5xl font-bold text-[#facc15] drop-shadow-lg">
-                        Security and Compliance Services
+                <div className="relative z-10 container mx-auto px-4 text-center">
+                    <h1 className="text-4xl md:text-5xl font-bold text-[#facc15] drop-shadow-lg font-serif">
+                        Communication and Collaboration
                     </h1>
                 </div>
             </div>
@@ -85,7 +102,7 @@ export function SecurityCompliancePage() {
             {/* Navigation Tabs (Horizontal) */}
             <div className="container mx-auto px-4 mt-8">
                 <div className="flex justify-center gap-4 flex-wrap">
-                    {securityServices.map((service) => (
+                    {communicationServices.map((service) => (
                         <button
                             key={service.id}
                             onClick={() => setActiveTab(service.id)}

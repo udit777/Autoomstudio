@@ -18,6 +18,45 @@ export const services: ServiceItem[] = [
         path: '/services/ai-workspace',
     },
     {
+        id: 'social-media',
+        title: 'Social Media Services',
+        description: 'Boost your brand presence.',
+        icon: Share2,
+        path: '/social-media-services',
+        subServices: [
+            {
+                id: 'social-mgmt',
+                title: 'Social Media Management',
+                icon: Share2,
+                path: '/social-media-management'
+            },
+            {
+                id: 'social-pub',
+                title: 'Social Media Publishing',
+                icon: Zap,
+                path: '/social-media-publishing'
+            },
+            {
+                id: 'social-content',
+                title: 'Social Media Content Creation',
+                icon: Share2,
+                path: '/social-media-content-creation'
+            },
+            {
+                id: 'analytics-reporting',
+                title: 'Analytics and Reporting',
+                icon: BarChart,
+                path: '/analytics-and-reporting'
+            },
+            {
+                id: 'ai-customer',
+                title: 'AI-Driven Customer Interaction',
+                icon: Brain,
+                path: '/ai-driven-customer-interaction'
+            }
+        ]
+    },
+    {
         id: 'it-infrastructure',
         title: 'IT Infrastructure Services',
         description: 'Robust infrastructure for your business.',
@@ -172,7 +211,7 @@ export const services: ServiceItem[] = [
         title: 'Communication and Collaboration',
         description: 'Empowering team collaboration.',
         icon: MessageSquare,
-        path: '/services/communication',
+        path: '/communication-collaboration',
         subServices: [
             {
                 id: 'project-mgmt',
@@ -199,7 +238,7 @@ export const services: ServiceItem[] = [
         title: 'Support and Maintenance',
         description: 'Reliable support for your business.',
         icon: Headphones,
-        path: '/services/support',
+        path: '/support-and-maintenance',
         subServices: [
             {
                 id: 'helpdesk-support',

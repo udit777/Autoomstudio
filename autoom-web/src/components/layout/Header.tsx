@@ -138,34 +138,7 @@ export function Header() {
                         </div>
                     </div>
 
-                    {/* Social Media Services Dropdown */}
-                    <div className="relative group">
-                        <Link
-                            to="/social-media-services"
-                            className="flex items-center gap-1 text-sm font-bold text-black hover:text-[#EAB308] transition-colors py-2 whitespace-nowrap"
-                        >
-                            Social Media Services <ChevronDown className="w-4 h-4" />
-                        </Link>
-                        <div
-                            className="absolute top-full left-0 w-[280px] bg-white border border-gray-100 rounded-xl shadow-xl p-4 flex flex-col gap-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform origin-top z-50 mt-2 text-left"
-                        >
-                            <Link to="/social-media-management" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
-                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">Social Media Management</span>
-                            </Link>
-                            <Link to="/social-media-publishing" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
-                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">Social Media Publishing</span>
-                            </Link>
-                            <Link to="/social-media-content-creation" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
-                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">Social Media Content Creation</span>
-                            </Link>
-                            <Link to="/analytics-and-reporting" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
-                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">Analytics and Reporting</span>
-                            </Link>
-                            <Link to="/ai-driven-customer-interaction" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
-                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">AI-Driven Customer Interaction</span>
-                            </Link>
-                        </div>
-                    </div>
+
 
                     {/* More Dropdown */}
                     <div className="relative group">
@@ -249,9 +222,7 @@ export function Header() {
                     <Link to="/process-automation" className="text-black hover:text-[#EAB308] font-bold text-lg py-2 flex items-center justify-between">
                         Process Automation <ChevronDown className="w-4 h-4" />
                     </Link>
-                    <Link to="/social-media-services" className="text-black hover:text-[#EAB308] font-bold text-lg py-2 flex items-center justify-between">
-                        Social Media Services <ChevronDown className="w-4 h-4" />
-                    </Link>
+
                     <div>
                         <button onClick={() => setOpenDropdown(openDropdown === 'more' ? null : 'more')} className="flex items-center justify-between w-full text-black hover:text-[#EAB308] font-bold text-lg py-2">
                             More <ChevronDown className={cn("w-4 h-4 transition-transform", openDropdown === 'more' && "rotate-180")} />
