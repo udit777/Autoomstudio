@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, ChevronRight, BookOpen, Users, Briefcase } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { services } from '@/data/services';
+import { products } from '@/data/products';
 import logo from '@/assets/logo.png';
 
 export function Header() {
@@ -54,11 +55,19 @@ export function Header() {
                             Products <ChevronDown className="w-4 h-4" />
                         </Link>
                         <div
-                            className="absolute top-full left-0 w-[250px] bg-white border border-gray-100 rounded-xl shadow-xl p-4 flex flex-col gap-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform origin-top z-50 mt-2 text-left"
+                            className="absolute top-full left-0 w-[280px] bg-white border border-gray-100 rounded-xl shadow-xl p-4 flex flex-col gap-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform origin-top z-50 mt-2 text-left"
                         >
-                            <Link to="/products/ai-prescription-saathi" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
-                                <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">AI Prescription Saathi</span>
-                            </Link>
+                            {products.map((product) => (
+                                <Link
+                                    key={product.id}
+                                    to={product.path}
+                                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item"
+                                >
+                                    <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">
+                                        {product.title}
+                                    </span>
+                                </Link>
+                            ))}
                         </div>
                     </div>
 
@@ -190,9 +199,27 @@ export function Header() {
                 <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 p-6 flex flex-col gap-4 lg:hidden shadow-lg h-screen overflow-y-auto pt-4">
                     <Link to="/" className="text-black hover:text-[#EAB308] font-bold text-lg">Home</Link>
 
-                    <Link to="/products" className="flex items-center justify-between text-black hover:text-[#EAB308] font-bold text-lg py-2">
-                        Products <ChevronDown className="w-4 h-4" />
-                    </Link>
+                    <div className="relative">
+                        <button onClick={() => setOpenDropdown(openDropdown === 'mobile-products' ? null : 'mobile-products')} className="flex items-center justify-between w-full text-black hover:text-[#EAB308] font-bold text-lg py-2">
+                            Products <ChevronDown className={cn("w-4 h-4 transition-transform", openDropdown === 'mobile-products' && "rotate-180")} />
+                        </button>
+                        {openDropdown === 'mobile-products' && (
+                            <div className="pl-4 space-y-2 mt-2">
+                                <Link to="/products" className="block py-2 text-sm font-bold text-black hover:text-[#EAB308]">
+                                    All Products
+                                </Link>
+                                {products.map((product) => (
+                                    <Link
+                                        key={product.id}
+                                        to={product.path}
+                                        className="block py-2 text-sm text-gray-600 hover:text-[#EAB308]"
+                                    >
+                                        {product.title}
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
+                    </div>
 
                     <div>
                         <button onClick={() => setOpenDropdown(openDropdown === 'mobile-services' ? null : 'mobile-services')} className="flex items-center justify-between w-full text-black hover:text-[#EAB308] font-bold text-lg py-2">
