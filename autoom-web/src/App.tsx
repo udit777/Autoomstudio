@@ -12,6 +12,16 @@ import { CareerPage } from '@/pages/CareerPage';
 import { PortfolioPage } from '@/pages/Placeholders';
 import { BlogPage } from '@/pages/BlogPage';
 import { AISocialMediaManagerBlogPage } from '@/pages/AISocialMediaManagerBlogPage';
+import { AIEnableCRMAgentBlogPage } from '@/pages/AIEnableCRMAgentBlogPage';
+import { AILeadGenerationAgentBlogPage } from '@/pages/AILeadGenerationAgentBlogPage';
+import { AIEmailAssistantBlogPage } from '@/pages/AIEmailAssistantBlogPage';
+import { AIResearchAssistantBlogPage } from '@/pages/AIResearchAssistantBlogPage';
+import { AIVoiceCallingAgentBlogPage } from '@/pages/AIVoiceCallingAgentBlogPage';
+import { DataAnalystAIAgentBlogPage } from '@/pages/DataAnalystAIAgentBlogPage';
+import { CustomerSupportAIAgentBlogPage } from '@/pages/CustomerSupportAIAgentBlogPage';
+import { Industry40BlogPage } from '@/pages/Industry40BlogPage';
+import { Industry40RevolutionBlogPage } from '@/pages/Industry40RevolutionBlogPage';
+import { Industry40OverviewBlogPage } from '@/pages/Industry40OverviewBlogPage';
 import { ProcessAutomationPage } from '@/pages/ProcessAutomationPage';
 import { SocialMediaServicesPage } from '@/pages/SocialMediaServicesPage';
 import { SocialMediaManagementInfoPage } from '@/pages/SocialMediaManagementInfoPage';
@@ -85,6 +95,16 @@ function App() {
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/ai-social-media-manager" element={<AISocialMediaManagerBlogPage />} />
+        <Route path="/blog/ai-enable-crm-agent" element={<AIEnableCRMAgentBlogPage />} />
+        <Route path="/blog/ai-lead-generation-agent" element={<AILeadGenerationAgentBlogPage />} />
+        <Route path="/blog/ai-email-assistant" element={<AIEmailAssistantBlogPage />} />
+        <Route path="/blog/ai-research-assistant" element={<AIResearchAssistantBlogPage />} />
+        <Route path="/blog/ai-voice-calling-agent" element={<AIVoiceCallingAgentBlogPage />} />
+        <Route path="/blog/data-analyst-ai-agent" element={<DataAnalystAIAgentBlogPage />} />
+        <Route path="/blog/customer-support-ai-agent" element={<CustomerSupportAIAgentBlogPage />} />
+        <Route path="/blog/industry-4-0-transforming" element={<Industry40BlogPage />} />
+        <Route path="/blog/industry-4-0-revolution" element={<Industry40RevolutionBlogPage />} />
+        <Route path="/blog/industry-4-0" element={<Industry40OverviewBlogPage />} />
         <Route path="/careers" element={<CareerPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>

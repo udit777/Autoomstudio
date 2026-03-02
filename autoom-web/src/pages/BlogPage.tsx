@@ -16,70 +16,70 @@ const allBlogPosts = [
         title: 'AI Enable CRM Agent',
         image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop',
         avatar: 'https://ui-avatars.com/api/?name=User&background=random',
-        link: '#'
+        link: '/blog/ai-enable-crm-agent'
     },
     {
         id: 3,
         title: 'AI Lead Generation Agent',
         image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop',
         avatar: 'https://ui-avatars.com/api/?name=User&background=random',
-        link: '#'
+        link: '/blog/ai-lead-generation-agent'
     },
     {
         id: 4,
         title: 'AI Email Assistant',
         image: 'https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=2070&auto=format&fit=crop',
         avatar: 'https://ui-avatars.com/api/?name=User&background=random',
-        link: '#'
+        link: '/blog/ai-email-assistant'
     },
     {
         id: 5,
         title: 'AI Research Assistant',
         image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=2074&auto=format&fit=crop',
         avatar: 'https://ui-avatars.com/api/?name=User&background=random',
-        link: '#'
+        link: '/blog/ai-research-assistant'
     },
     {
         id: 6,
         title: 'AI Voice Calling Agent',
         image: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=2070&auto=format&fit=crop',
         avatar: 'https://ui-avatars.com/api/?name=User&background=random',
-        link: '#'
+        link: '/blog/ai-voice-calling-agent'
     },
     {
         id: 7,
         title: 'Data Analyst AI Agent',
         image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
         avatar: 'https://ui-avatars.com/api/?name=User&background=random',
-        link: '#'
+        link: '/blog/data-analyst-ai-agent'
     },
     {
         id: 8,
         title: 'Customer Support AI Agent',
         image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2006&auto=format&fit=crop',
         avatar: 'https://ui-avatars.com/api/?name=User&background=random',
-        link: '#'
+        link: '/blog/customer-support-ai-agent'
     },
     {
         id: 9,
         title: 'Industry 4.0: Transforming Businesses for a Brighter Future',
         image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop',
         avatar: 'https://ui-avatars.com/api/?name=User&background=random',
-        link: '#'
+        link: '/blog/industry-4-0-transforming'
     },
     {
         id: 10,
         title: 'Industry 4.0 Revolution',
         image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop',
         avatar: 'https://ui-avatars.com/api/?name=User&background=random',
-        link: '#'
+        link: '/blog/industry-4-0-revolution'
     },
     {
         id: 11,
         title: 'Industry 4.0',
         image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
         avatar: 'https://ui-avatars.com/api/?name=User&background=random',
-        link: '#'
+        link: '/blog/industry-4-0'
     },
     {
         id: 12,
