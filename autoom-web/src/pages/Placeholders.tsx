@@ -26,18 +26,6 @@ export function ContactPage() {
     );
 }
 
-export function BlogPage() {
-    return (
-        <div className="pt-20">
-            <Section className="bg-white">
-                <div className="container mx-auto px-4">
-                    <h1 className="text-4xl font-bold mb-6">Blog</h1>
-                    <p className="text-lg text-gray-600">Read our latest updates and insights.</p>
-                </div>
-            </Section>
-        </div>
-    );
-}
 
 export function PortfolioPage() {
     return (

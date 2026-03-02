@@ -9,7 +9,9 @@ import { ServiceDetailPage } from '@/pages/ServiceDetailPage';
 import { ContactPage } from '@/pages/ContactPage';
 import { AboutPage } from '@/pages/AboutPage';
 import { CareerPage } from '@/pages/CareerPage';
-import { BlogPage, PortfolioPage } from '@/pages/Placeholders';
+import { PortfolioPage } from '@/pages/Placeholders';
+import { BlogPage } from '@/pages/BlogPage';
+import { AISocialMediaManagerBlogPage } from '@/pages/AISocialMediaManagerBlogPage';
 import { ProcessAutomationPage } from '@/pages/ProcessAutomationPage';
 import { SocialMediaServicesPage } from '@/pages/SocialMediaServicesPage';
 import { SocialMediaManagementInfoPage } from '@/pages/SocialMediaManagementInfoPage';
@@ -82,6 +84,7 @@ function App() {
 
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/ai-social-media-manager" element={<AISocialMediaManagerBlogPage />} />
         <Route path="/careers" element={<CareerPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
