@@ -1,5 +1,5 @@
 import { Section } from '@/components/ui/Section';
-import { Facebook, Globe, Laptop, Target, Palette, Component, Pencil, Code2, Users, Linkedin, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Facebook, Globe, Laptop, Target, Component, Pencil, Linkedin, Twitter, Youtube } from 'lucide-react';
 
 // Custom card for Team Members based on the new design (Role Top -> Image -> Name -> Icons)
 const TeamMemberCard = ({ name, role, image, isCEO = false }: { name: string; role: string; image: string; isCEO?: boolean }) => (

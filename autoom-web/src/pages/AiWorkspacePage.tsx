@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
-import { Share2, Mail, Users, Search, Phone, Database, Briefcase, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import { Share2, Mail, Users, Search, Phone, Database, Briefcase } from 'lucide-react';
 // import robotImage from '@/assets/ausomemgr_robot_lady_1770038971589.png'; // Removed missing asset import
 // I will use a placeholder or relative path if I can't move it.
 // The user uploaded media usually goes to artifacts. I should probably use a relative path if it's in a known asset location, or just use the artifact path if I can.

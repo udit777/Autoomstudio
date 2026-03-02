@@ -1,5 +1,4 @@
 import { Section } from '@/components/ui/Section';
-import { Button } from '@/components/ui/Button';
 import { MapPin, LayoutGrid } from 'lucide-react';
 
 const JobCard = ({ title, location, responsibilities }: { title: string; location: string; responsibilities: string }) => (

@@ -1,6 +1,5 @@
 import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
-import { cn } from '@/lib/utils';
 import { ChevronRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
