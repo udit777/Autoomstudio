@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { ServicePopupForm } from '../components/ui/ServicePopupForm';
 
 /* ─── tiny hook: fade-in on scroll ─── */
@@ -65,6 +64,37 @@ const TAB_DATA = [
 export function SocialMediaContentCreationInfoPage() {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [activeTab, setActiveTab] = useState(TAB_DATA[0].id);
+    const [animatedContent, setAnimatedContent] = useState('');
+    const fullWord = 'Content';
+
+    useEffect(() => {
+        let typeInterval: NodeJS.Timeout;
+        let cycleInterval: NodeJS.Timeout;
+
+        const startTyping = () => {
+            setAnimatedContent('');
+            let i = 0;
+            typeInterval = setInterval(() => {
+                setAnimatedContent(fullWord.slice(0, i + 1));
+                i++;
+                if (i >= fullWord.length) {
+                    clearInterval(typeInterval);
+                }
+            }, 150);
+        };
+
+        startTyping();
+
+        cycleInterval = setInterval(() => {
+            clearInterval(typeInterval);
+            startTyping();
+        }, 3000);
+
+        return () => {
+            clearInterval(typeInterval);
+            clearInterval(cycleInterval);
+        };
+    }, []);
 
     const currentTabData = TAB_DATA.find(t => t.id === activeTab) || TAB_DATA[0];
 
@@ -76,8 +106,8 @@ export function SocialMediaContentCreationInfoPage() {
             <section className="relative pt-24 pb-16 flex flex-col items-center justify-center text-center bg-[#2b1f1c]">
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay opacity-10"></div>
                 <FadeSection className="relative z-10 container mx-auto px-6 max-w-5xl text-white">
-                    <h1 className="text-3xl md:text-5xl font-extrabold mb-2 tracking-tight">Social Media Content Creation</h1>
-                    <h2 className="text-lg md:text-2xl font-bold mb-6">Transforming Ideas Into Engaging <span className="text-[#f76c33]">Content</span></h2>
+                    <h1 className="text-3xl md:text-5xl font-extrabold mb-2 tracking-tight text-white">Social Media Content Creation</h1>
+                    <h2 className="text-lg md:text-2xl font-bold mb-6 text-white">Transforming Ideas Into Engaging <span className="text-[#f76c33] inline-block min-w-[100px] text-left">{animatedContent}</span><span className="animate-pulse text-[#f76c33]">|</span></h2>
                     <p className="text-[13px] md:text-sm text-gray-300 leading-relaxed max-w-4xl mx-auto">
                         Unlock Your Brand's Potential. Elevate Your Online Presence with Expert Social Media Content Creation. Discover Tailored Strategies, Engaging Visuals, and Compelling Copywriting to Captivate Your Audience. Let Us Craft Your Digital Identity and Propel Your Brand to New Heights!
                     </p>
@@ -139,8 +169,8 @@ export function SocialMediaContentCreationInfoPage() {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`px-6 py-2.5 text-xs font-bold transition-colors border ${activeTab === tab.id
-                                        ? 'bg-[#7ae582] text-white border-[#7ae582]'
-                                        : 'bg-white text-gray-700 border-white hover:bg-gray-100'
+                                    ? 'bg-[#7ae582] text-white border-[#7ae582]'
+                                    : 'bg-white text-gray-700 border-white hover:bg-gray-100'
                                     }`}
                             >
                                 {tab.label}
@@ -351,6 +381,21 @@ export function SocialMediaContentCreationInfoPage() {
                             <p className="text-[10px] text-gray-400">Establish transparent revision processes and limits.</p>
                         </FadeSection>
                     </div>
+                </div>
+            </section>
+
+            {/* ══ 9. READY TO COLLABORATE CTA ══ */}
+            <section className="py-16 bg-gradient-to-r from-[#219e75] to-[#d7ec55]">
+                <div className="container mx-auto px-6 text-center">
+                    <FadeSection>
+                        <h2 className="text-xl md:text-2xl font-bold text-white mb-6 tracking-wide drop-shadow-sm">
+                            Ready to collaborate?
+                        </h2>
+                        <button onClick={() => setIsPopupOpen(true)}
+                            className="inline-block border border-white text-white font-medium px-8 py-2.5 rounded hover:bg-white hover:text-[#219e75] transition-colors text-sm">
+                            Request a Demo
+                        </button>
+                    </FadeSection>
                 </div>
             </section>
 
