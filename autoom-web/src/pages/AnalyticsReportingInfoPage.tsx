@@ -197,7 +197,7 @@ export function AnalyticsReportingInfoPage() {
                 <div className="container mx-auto px-6 max-w-[1400px]">
                     <h2 className="text-center text-gray-800 text-xl md:text-2xl font-normal mb-8">Our Process</h2>
 
-                    <div className="flex flex-col md:flex-row gap-6">
+                    <div className="flex flex-col md:flex-row gap-6 items-stretch">
                         {/* Interactive Left Menu */}
                         <div className="md:w-1/3 flex flex-col gap-2">
                             {MENU_ITEMS.map((item) => (
@@ -212,8 +212,8 @@ export function AnalyticsReportingInfoPage() {
                         </div>
 
                         {/* Huge Right Image Block */}
-                        <div className="md:w-2/3 h-full min-h-[400px]">
-                            <FadeSection key={activeProcessId} className="relative h-full rounded shadow-lg overflow-hidden flex flex-col items-center justify-center p-12 text-center bg-[#243340]">
+                        <div className="md:w-2/3 flex flex-col">
+                            <FadeSection key={activeProcessId} className="relative flex-1 w-full rounded shadow-lg overflow-hidden flex flex-col items-center justify-center p-12 text-center bg-[#243340]">
                                 {/* We only have the generic consultation image for the mockup right now */}
                                 <img src="/images/aa_client_consultation.png" alt="Consultation" className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" />
 
