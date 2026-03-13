@@ -31,6 +31,7 @@ import { AnalyticsReportingInfoPage } from '@/pages/AnalyticsReportingInfoPage';
 import { AiInteractionInfoPage } from '@/pages/AiInteractionInfoPage';
 import { ITInfrastructurePage } from '@/pages/ITInfrastructurePage';
 import { ITInfrastructureManagementInfoPage } from '@/pages/ITInfrastructureManagementInfoPage';
+import { DataCenterManagementInfoPage } from '@/pages/DataCenterManagementInfoPage';
 import { SoftwareDevelopmentPage } from '@/pages/SoftwareDevelopmentPage';
 import { DigitalMarketingPage } from '@/pages/DigitalMarketingPage';
 import { SecurityCompliancePage } from '@/pages/SecurityCompliancePage';
@@ -70,6 +71,8 @@ function App() {
         <Route path="/it-infrastructure-services" element={<ITInfrastructurePage />} />
         <Route path="/it-infrastructure-management" element={<ITInfrastructureManagementInfoPage />} />
         <Route path="/it-infrastructure-management-info" element={<ITInfrastructureManagementInfoPage />} />
+        <Route path="/data-center-management" element={<DataCenterManagementInfoPage />} />
+        <Route path="/data-center-management-info" element={<DataCenterManagementInfoPage />} />
         <Route path="/software-development-services" element={<SoftwareDevelopmentPage />} />
         <Route path="/digital-marketing-analytics" element={<DigitalMarketingPage />} />
         <Route path="/security-compliance-services" element={<SecurityCompliancePage />} />

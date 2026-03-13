@@ -73,7 +73,7 @@ export const services: ServiceItem[] = [
                 id: 'datacenter',
                 title: 'Data Center Management',
                 icon: Database,
-                path: '/services/infrastructure/datacenter'
+                path: '/data-center-management'
             },
             {
                 id: 'hosting',
