@@ -32,6 +32,10 @@ import { AiInteractionInfoPage } from '@/pages/AiInteractionInfoPage';
 import { ITInfrastructurePage } from '@/pages/ITInfrastructurePage';
 import { ITInfrastructureManagementInfoPage } from '@/pages/ITInfrastructureManagementInfoPage';
 import { DataCenterManagementInfoPage } from '@/pages/DataCenterManagementInfoPage';
+import { DomainHostingSolutionsInfoPage } from '@/pages/DomainHostingSolutionsInfoPage';
+import { LegacySystemModernizationInfoPage } from '@/pages/LegacySystemModernizationInfoPage';
+import { WebDevelopmentServicesInfoPage } from '@/pages/WebDevelopmentServicesInfoPage';
+import { UIUXDesignServicesInfoPage } from '@/pages/UIUXDesignServicesInfoPage';
 import { SoftwareDevelopmentPage } from '@/pages/SoftwareDevelopmentPage';
 import { DigitalMarketingPage } from '@/pages/DigitalMarketingPage';
 import { SecurityCompliancePage } from '@/pages/SecurityCompliancePage';
@@ -73,6 +77,14 @@ function App() {
         <Route path="/it-infrastructure-management-info" element={<ITInfrastructureManagementInfoPage />} />
         <Route path="/data-center-management" element={<DataCenterManagementInfoPage />} />
         <Route path="/data-center-management-info" element={<DataCenterManagementInfoPage />} />
+        <Route path="/domain-hosting-solutions" element={<DomainHostingSolutionsInfoPage />} />
+        <Route path="/domain-hosting-solutions-info" element={<DomainHostingSolutionsInfoPage />} />
+        <Route path="/legacy-system-modernization" element={<LegacySystemModernizationInfoPage />} />
+        <Route path="/legacy-system-modernization-info" element={<LegacySystemModernizationInfoPage />} />
+        <Route path="/web-development-services" element={<WebDevelopmentServicesInfoPage />} />
+        <Route path="/web-development-services-info" element={<WebDevelopmentServicesInfoPage />} />
+        <Route path="/ui-ux-design-services" element={<UIUXDesignServicesInfoPage />} />
+        <Route path="/ui-ux-design-services-info" element={<UIUXDesignServicesInfoPage />} />
         <Route path="/software-development-services" element={<SoftwareDevelopmentPage />} />
         <Route path="/digital-marketing-analytics" element={<DigitalMarketingPage />} />
         <Route path="/security-compliance-services" element={<SecurityCompliancePage />} />

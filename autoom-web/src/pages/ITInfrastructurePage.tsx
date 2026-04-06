@@ -37,7 +37,7 @@ const itServices = [
             title: 'Domain & Hosting Services',
             description: `Get reliable and secure domain registration and hosting services. We ensure your online presence is stable with high uptime, fast load speeds, and 24/7 support to keep your business running smoothly.`,
             learnMoreText: 'Learn more about Domain & Hosting Services...',
-            learnMoreLink: '#',
+            learnMoreLink: '/domain-hosting-solutions-info',
             accessLink: '/contact',
             image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2672&auto=format&fit=crop'
         }
@@ -49,7 +49,7 @@ const itServices = [
             title: 'Legacy System Modernization',
             description: `Transform your outdated systems into modern, agile platforms. We help you migrate legacy applications to the cloud, improving performance, security, and scalability while reducing maintenance costs.`,
             learnMoreText: 'Learn more about Legacy System Modernization...',
-            learnMoreLink: '#',
+            learnMoreLink: '/legacy-system-modernization-info',
             accessLink: '/contact',
             image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop'
         }

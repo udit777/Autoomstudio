@@ -79,13 +79,13 @@ export const services: ServiceItem[] = [
                 id: 'hosting',
                 title: 'Domain & Hosting Solutions',
                 icon: Globe,
-                path: '/services/infrastructure/hosting'
+                path: '/domain-hosting-solutions'
             },
             {
                 id: 'modernization',
                 title: 'Legacy System Modernization',
                 icon: Box,
-                path: '/services/infrastructure/modernization'
+                path: '/legacy-system-modernization'
             }
         ]
     },
@@ -100,13 +100,13 @@ export const services: ServiceItem[] = [
                 id: 'web-dev',
                 title: 'Web Development Services',
                 icon: Globe,
-                path: '/services/software/web-development'
+                path: '/web-development-services'
             },
             {
                 id: 'ui-ux',
                 title: 'UI/UX Design Services',
                 icon: Monitor,
-                path: '/services/software/ui-ux'
+                path: '/ui-ux-design-services'
             },
             {
                 id: 'custom-soft',

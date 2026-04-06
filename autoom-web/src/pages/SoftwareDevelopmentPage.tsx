@@ -30,7 +30,7 @@ const softwareServices = [
                 </>
             ),
             learnMoreText: 'Learn more about Web Development...',
-            learnMoreLink: '#',
+            learnMoreLink: '/web-development-services-info',
             accessLink: '/contact',
             image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2672&auto=format&fit=crop'
         }
@@ -42,7 +42,7 @@ const softwareServices = [
             title: 'UI/UX Design',
             description: 'Our UI/UX design services focus on creating intuitive and engaging user experiences. We combine aesthetics with functionality to deliver designs that users love.',
             learnMoreText: 'Learn more about UI/UX Design...',
-            learnMoreLink: '#',
+            learnMoreLink: '/ui-ux-design-services-info',
             accessLink: '/contact',
             image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop'
         }
