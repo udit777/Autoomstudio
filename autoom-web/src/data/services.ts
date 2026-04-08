@@ -15,7 +15,7 @@ export const services: ServiceItem[] = [
         title: 'AI Workspace',
         description: 'Intelligent workspaces for modern teams.',
         icon: Brain,
-        path: '/services/ai-workspace',
+        path: '/ai-workspace-ausomemgr',
     },
     {
         id: 'social-media',

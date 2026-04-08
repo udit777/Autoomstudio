@@ -66,7 +66,7 @@ function App() {
         <Route path="/products/ai-prescription-saathi" element={<AiPrescriptionSaathiPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
-        <Route path="/services/ai-workspace" element={<AiWorkspacePage />} />
+        <Route path="/ai-workspace-ausomemgr" element={<AiWorkspacePage />} />
         <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
         <Route path="/services/:category/:subCategory" element={<ServiceDetailPage />} />
         <Route path="/process-automation" element={<ProcessAutomationPage />} />

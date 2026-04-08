@@ -48,7 +48,13 @@ export function ServiceSection({
                                 Our Services <span className="text-lg opacity-50">❖</span>
                             </h3>
 
-                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                            <div className={cn(
+                                "grid gap-4",
+                                subServices.length === 6 ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-6" :
+                                subServices.length === 3 ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" :
+                                subServices.length === 2 ? "grid-cols-2 sm:grid-cols-2 lg:grid-cols-4" : // lg:grid-cols-4 limits width so they don't get huge
+                                "grid-cols-2 sm:grid-cols-4"
+                            )}>
                                 {subServices.map((sub, index) => (
                                     <motion.div
                                         key={index}

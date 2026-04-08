@@ -61,9 +61,19 @@ export function Header() {
                                 <Link
                                     key={product.id}
                                     to={product.path}
-                                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item"
+                                    className={cn(
+                                        "flex items-center gap-3 p-3 rounded-lg transition-colors group/item",
+                                        location.pathname === product.path || location.pathname === `${product.path}/`
+                                            ? "bg-[#00695C] text-white"
+                                            : "hover:bg-gray-50"
+                                    )}
                                 >
-                                    <span className="text-sm text-gray-700 font-medium group-hover/item:text-[#EAB308] transition-colors">
+                                    <span className={cn(
+                                        "text-sm font-medium transition-colors",
+                                        location.pathname === product.path || location.pathname === `${product.path}/`
+                                            ? "text-white"
+                                            : "text-gray-700 group-hover/item:text-[#EAB308]"
+                                    )}>
                                         {product.title}
                                     </span>
                                 </Link>
@@ -93,7 +103,12 @@ export function Header() {
                                     >
                                         <Link
                                             to={service.path}
-                                            className="flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-700 hover:bg-[#EAB308] hover:text-white transition-colors"
+                                            className={cn(
+                                                "flex items-center justify-between px-4 py-3 text-sm font-medium transition-colors",
+                                                location.pathname === service.path || location.pathname === `${service.path}/` || (service.subServices && service.subServices.some(sub => location.pathname === sub.path || location.pathname === `${sub.path}/`))
+                                                    ? "bg-[#00695C] text-white"
+                                                    : "text-gray-700 hover:bg-[#EAB308] hover:text-white"
+                                            )}
                                         >
                                             {service.title}
                                             {service.subServices && <ChevronRight className="w-4 h-4" />}
@@ -107,7 +122,12 @@ export function Header() {
                                                         <Link
                                                             key={subItem.id}
                                                             to={subItem.path}
-                                                            className="block px-6 py-3 text-sm text-gray-600 hover:text-[#EAB308] hover:bg-gray-50 transition-colors"
+                                                            className={cn(
+                                                                "block px-6 py-3 text-sm transition-colors",
+                                                                location.pathname === subItem.path || location.pathname === `${subItem.path}/`
+                                                                    ? "text-[#EAB308] font-bold bg-gray-50"
+                                                                    : "text-gray-600 hover:text-[#EAB308] hover:bg-gray-50"
+                                                            )}
                                                         >
                                                             {subItem.title}
                                                         </Link>

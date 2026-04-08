@@ -1,30 +1,35 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 
 const services = [
     {
         id: 'ai-workspace',
         title: 'AI Workspace',
-        icon: ArrowUpRight, // Placeholder
+        icon: ArrowUpRight,
+        path: '/ai-workspace-ausomemgr',
         colSpan: 1,
     },
     {
         id: 'process-automation',
         title: 'Process Automation',
-        icon: ArrowUpRight, // Placeholder
+        icon: ArrowUpRight,
+        path: '/process-automation',
         colSpan: 1,
     },
     {
         id: 'social-media',
         title: 'Social Media',
-        icon: ArrowUpRight, // Placeholder
+        icon: ArrowUpRight,
+        path: '/social-media-services',
         colSpan: 1,
     },
     {
         id: 'software-development',
         title: 'Software Development',
-        icon: ArrowUpRight, // Placeholder
+        icon: ArrowUpRight,
+        path: '/software-development-services',
         colSpan: 1,
     }
 ];
@@ -39,14 +44,14 @@ export function SpecialServices() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
                     {services.map((service, index) => (
-                        <motion.div
-                            key={service.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="relative h-48 rounded-xl overflow-hidden group cursor-pointer shadow-lg"
-                        >
+                        <Link to={service.path} key={service.id} className="block cursor-pointer">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className="relative h-48 rounded-xl overflow-hidden group shadow-lg"
+                            >
                             {/* Geometric Background */}
                             <div className="absolute inset-0 bg-[#00695C]"
                                 style={{
@@ -74,7 +79,8 @@ export function SpecialServices() {
                                 </div>
                             </div>
 
-                        </motion.div>
+                            </motion.div>
+                        </Link>
                     ))}
                 </div>
             </div>
