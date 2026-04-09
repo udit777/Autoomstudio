@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/Button';
 import { Share2, Mail, Users, Search, Phone, Database, Briefcase } from 'lucide-react';
 import smartAiWorkflowsImage from '@/assets/smart_ai_workflows.jpg';
 import aiWorkspaceHero from '@/assets/ai_workspace_hero.jpg';
+import socialMediaAgentBg from '@/assets/social_media_agent.jpg';
+import voiceCallingAgentBg from '@/assets/voice_calling_agent.jpg';
 // import robotImage from '@/assets/ausomemgr_robot_lady_1770038971589.png'; // Removed missing asset import
 // I will use a placeholder or relative path if I can't move it.
 // The user uploaded media usually goes to artifacts. I should probably use a relative path if it's in a known asset location, or just use the artifact path if I can.
@@ -27,7 +29,7 @@ const agents = [
         name: 'AI Social Media Agent 🤖',
         icon: Share2,
         color: 'bg-green-500',
-        image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop', // Placeholder
+        image: socialMediaAgentBg,
         content: {
             title: 'Social Media AI Agent',
             description: "Autoom Studio's AI Social Media Agent is an advanced automation solution designed to revolutionize how businesses manage their online presence. As part of Autoom Studio's comprehensive AI Workspace, this agent seamlessly integrates artificial intelligence with social media strategies to enhance engagement, streamline operations, and drive measurable results.",
@@ -99,7 +101,7 @@ const agents = [
         name: 'AI voice calling agent 🤖',
         icon: Phone,
         color: 'bg-green-500',
-        image: 'https://images.unsplash.com/photo-1557200130-97276ddc360a?q=80&w=2070&auto=format&fit=crop', // Placeholder
+        image: voiceCallingAgentBg,
         content: {
             title: 'AI Voice Calling Agent',
             description: "Autoom Studio's AI Voice Calling Agent, integrated within the AuSoMe Manager platform, is a state-of-the-art automation tool designed to revolutionize customer communication. This intelligent agent leverages advanced artificial intelligence to handle voice-based interactions, enabling businesses to engage with customers more efficiently and effectively.",
@@ -173,9 +175,9 @@ export function AiWorkspacePage() {
             {/* Intro Section */}
             <Section className="bg-white pt-8 pb-2 md:pt-12 md:pb-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div className="relative min-h-[400px] md:min-h-0">
+                    <div className="relative aspect-video w-full">
                         {/* Robot Image */}
-                        <div className="absolute inset-0 rounded-xl overflow-hidden shadow-2xl bg-blue-100">
+                        <div className="absolute inset-0 rounded-xl overflow-hidden shadow-2xl">
                             <img
                                 src={smartAiWorkflowsImage}
                                 alt="AuSoMeMgr Robot"
@@ -215,10 +217,10 @@ export function AiWorkspacePage() {
 
                     {/* Content Area */}
                     <div
-                        className="lg:col-span-2 rounded-xl overflow-hidden shadow-2xl relative min-h-[600px] text-white bg-cover bg-center"
+                        className="lg:col-span-2 rounded-xl overflow-hidden shadow-2xl relative min-h-[500px] lg:aspect-video text-white bg-cover bg-center bg-no-repeat bg-[#111827]"
                         style={{ backgroundImage: `url('${activeAgent.image}')` }}
                     >
-                        <div className="absolute inset-0 bg-black/70"></div> {/* Dark Overlay */}
+                        <div className="absolute inset-0 bg-black/60"></div> {/* Darkened overlay for better text readability */}
 
                         <div className="relative z-10 p-8 md:p-12 h-full flex flex-col justify-center">
                             <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">{activeAgent.content.title}</h3>

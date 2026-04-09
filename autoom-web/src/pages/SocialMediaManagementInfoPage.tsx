@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ServicePopupForm } from '../components/ui/ServicePopupForm';
+import socialManagementHero from '@/assets/social_management_hero.jpg';
 
 /* ─── tiny hook: fade-in on scroll ─── */
 function useFadeIn() {
@@ -87,8 +88,8 @@ export function SocialMediaManagementInfoPage() {
             {/* ══ 1. HERO ══ */}
             <section className="relative min-h-[580px] flex items-center overflow-hidden bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e]">
                 <div className="absolute inset-0">
-                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1920&auto=format&fit=crop"
-                        alt="hero" className="w-full h-full object-cover opacity-10" />
+                    <img src={socialManagementHero}
+                        alt="hero" className="w-full h-full object-cover opacity-20" />
                     <div className="absolute top-20 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
                     <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-orange-500/15 rounded-full blur-3xl"></div>
                 </div>

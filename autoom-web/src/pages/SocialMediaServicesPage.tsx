@@ -3,6 +3,7 @@ import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import socialServicesHero from '@/assets/social_services_hero.jpg';
 
 // Mock data for the social media services tabs
 const socialServices = [
@@ -96,27 +97,27 @@ export function SocialMediaServicesPage() {
     const activeService = socialServices.find(s => s.id === activeTab) || socialServices[0];
 
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-[#2d2d3e] min-h-screen">
             {/* Hero Section */}
-            <div className="relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-[#050511]">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop')] bg-cover bg-center opacity-40"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050511] to-transparent"></div>
+            <div className="relative h-[35vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#1a1a2e]">
+                <div 
+                    className="absolute inset-0 bg-cover bg-center opacity-25"
+                    style={{ backgroundImage: `url(${socialServicesHero})` }}
+                ></div>
+                <div className="absolute inset-0 bg-[#1a1a2e]/60"></div>
 
                 <div className="relative z-10 text-center px-4">
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-2xl tracking-tight">
-                        Social Media <span className="text-gray-400">Services</span>
+                    <p className="text-xs font-semibold text-gray-400 tracking-[0.3em] uppercase mb-2">Social Media Services</p>
+                    <h1 className="text-2xl md:text-4xl font-bold text-white tracking-[0.15em] uppercase">
+                        SOCIAL MEDIA SERVICES
                     </h1>
                 </div>
             </div>
 
             {/* Content Section */}
-            <Section className="py-20 bg-[#111111]"> {/* Dark background for the section */}
+            <Section className="py-16 bg-[#2d2d3e]"> 
                 <div className="container mx-auto">
-                    {/* Grid Background Pattern */}
-                    <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
-                        backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)',
-                        backgroundSize: '20px 20px'
-                    }}></div>
+                    {/* no grid pattern - clean dark */}
 
                     <div className="flex flex-col lg:flex-row gap-8 relative z-10 items-stretch">
                         {/* Left Column: Tabs */}
@@ -146,15 +147,14 @@ export function SocialMediaServicesPage() {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.3 }}
-                                    className="bg-[#0f172a]/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 md:p-10 text-white w-full flex flex-col justify-between min-h-[500px]"
+                                    className="bg-[#1e2a3a] rounded-2xl p-6 md:p-12 text-white w-full flex flex-col justify-between min-h-[420px] shadow-2xl shadow-black/40"
                                 >
                                     <div>
-                                        <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">{activeService.content.title}</h3>
+                                        <h3 className="text-3xl md:text-5xl font-bold mb-8 text-center text-white">{activeService.content.title}</h3>
 
-                                        <div className="space-y-4 text-gray-200 leading-relaxed text-lg">
+                                        <div className="space-y-4 text-gray-100 leading-relaxed text-[15px] md:text-base">
                                             {activeService.content.points.map((point, idx) => (
-                                                <div key={idx} className="flex items-start gap-3">
-                                                    <span className="text-xl leading-none mt-1">➤</span> {/* Using Arrow Bullet as per image */}
+                                                <div key={idx} className="flex items-start gap-4">
                                                     <span>{point}</span>
                                                 </div>
                                             ))}
