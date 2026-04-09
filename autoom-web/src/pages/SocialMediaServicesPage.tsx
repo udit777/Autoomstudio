@@ -4,12 +4,15 @@ import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import socialServicesHero from '@/assets/social_services_hero.jpg';
+import socialManagementHero from '@/assets/social_management_hero.jpg';
+import socialPublishingBg from '@/assets/social_publishing.jpg';
 
 // Mock data for the social media services tabs
 const socialServices = [
     {
         id: 'management',
         title: 'Social Media Management',
+        backgroundImage: socialManagementHero,
         content: {
             title: 'Social Media Management',
             points: [
@@ -27,6 +30,7 @@ const socialServices = [
     {
         id: 'publishing',
         title: 'Social Media Publishing',
+        backgroundImage: socialPublishingBg,
         content: {
             title: 'Social Media Publishing',
             points: [
@@ -147,9 +151,18 @@ export function SocialMediaServicesPage() {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.3 }}
-                                    className="bg-[#1e2a3a] rounded-2xl p-6 md:p-12 text-white w-full flex flex-col justify-between min-h-[420px] shadow-2xl shadow-black/40"
+                                    className="relative rounded-2xl p-6 md:p-12 text-white w-full flex flex-col justify-between min-h-[420px] shadow-2xl shadow-black/40 overflow-hidden bg-[#1e2a3a]"
                                 >
-                                    <div>
+                                    {activeService.backgroundImage && (
+                                        <>
+                                            <div 
+                                                className="absolute inset-0 bg-cover bg-center"
+                                                style={{ backgroundImage: `url(${activeService.backgroundImage})` }}
+                                            />
+                                            <div className="absolute inset-0 bg-black/60" />
+                                        </>
+                                    )}
+                                    <div className="relative z-10 flex flex-col justify-between h-full">
                                         <h3 className="text-3xl md:text-5xl font-bold mb-8 text-center text-white">{activeService.content.title}</h3>
 
                                         <div className="space-y-4 text-gray-100 leading-relaxed text-[15px] md:text-base">
