@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
 import { Share2, Mail, Users, Search, Phone, Database, Briefcase } from 'lucide-react';
+import smartAiWorkflowsImage from '@/assets/smart_ai_workflows.jpg';
+import aiWorkspaceHero from '@/assets/ai_workspace_hero.jpg';
 // import robotImage from '@/assets/ausomemgr_robot_lady_1770038971589.png'; // Removed missing asset import
 // I will use a placeholder or relative path if I can't move it.
 // The user uploaded media usually goes to artifacts. I should probably use a relative path if it's in a known asset location, or just use the artifact path if I can.
@@ -157,8 +159,8 @@ export function AiWorkspacePage() {
         <div className="min-h-screen bg-white pt-[57px]"> {/* Offset for fixed header */}
             {/* Hero Header */}
             <div
-                className="relative py-24 text-center overflow-hidden bg-cover bg-center"
-                style={{ backgroundImage: "url('https://autoomstudio.com/wp-content/uploads/2025/04/image_2025-04-29_12-42-16.png')" }}
+                className="relative py-12 md:py-32 text-center overflow-hidden bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${aiWorkspaceHero})` }}
             >
                 <div className="absolute inset-0 bg-black/60"></div> {/* Dark overlay for readability */}
                 <div className="relative z-10 container mx-auto px-4">
@@ -175,7 +177,7 @@ export function AiWorkspacePage() {
                         {/* Robot Image */}
                         <div className="absolute inset-0 rounded-xl overflow-hidden shadow-2xl bg-blue-100">
                             <img
-                                src="https://autoomstudio.com/wp-content/uploads/2025/04/Smart-AI.png"
+                                src={smartAiWorkflowsImage}
                                 alt="AuSoMeMgr Robot"
                                 className="w-full h-full object-cover"
                             />
