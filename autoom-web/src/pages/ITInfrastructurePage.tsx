@@ -4,6 +4,9 @@ import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import itInfrastructureManagementBg from '@/assets/it_infrastructure_management_bg.jpg';
+import domainHostingBg from '@/assets/domain_hosting_bg.jpg';
+import legacyModernizationBg from '@/assets/legacy_modernization_bg.jpg';
 
 const itServices = [
     {
@@ -15,7 +18,7 @@ const itServices = [
             learnMoreText: 'Learn more about IT Infrastructure Management Services...',
             learnMoreLink: '#',
             accessLink: '/contact',
-            image: 'https://images.unsplash.com/photo-1558494949-ef526b01201b?q=80&w=2670&auto=format&fit=crop'
+            image: itInfrastructureManagementBg
         }
     },
     {
@@ -23,7 +26,7 @@ const itServices = [
         title: 'Data Center Management',
         content: {
             title: 'Data Center Management',
-            description: `Our Data Center Management solutions ensure your data is secure, accessible, and efficiently managed. We handle everything from server maintenance to disaster recovery planning, providing a robust foundation for your digital assets.`,
+            description: `In the heart of every digitally-driven enterprise lies the data center, and its efficient management is paramount. Our Data Center Management services guarantee the integrity, security, and availability of your critical data. Whether it's optimizing server performance, ensuring data redundancy, or implementing disaster recovery plans, we've got your back.`,
             learnMoreText: 'Learn more about Data Center Management...',
             learnMoreLink: '#',
             accessLink: '/contact',
@@ -35,11 +38,11 @@ const itServices = [
         title: 'Domain & Hosting Services',
         content: {
             title: 'Domain & Hosting Services',
-            description: `Get reliable and secure domain registration and hosting services. We ensure your online presence is stable with high uptime, fast load speeds, and 24/7 support to keep your business running smoothly.`,
+            description: `Your online presence begins with a strong domain and reliable hosting. Our Domain & Hosting Services offer a hassle-free experience, providing domain registration, management, and hosting solutions tailored to your business needs. Enjoy seamless scalability, high-performance servers, and 24/7 support to keep your digital presence running smoothly.`,
             learnMoreText: 'Learn more about Domain & Hosting Services...',
             learnMoreLink: '/domain-hosting-solutions-info',
             accessLink: '/contact',
-            image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2672&auto=format&fit=crop'
+            image: domainHostingBg
         }
     },
     {
@@ -47,11 +50,11 @@ const itServices = [
         title: 'Legacy System Modernization',
         content: {
             title: 'Legacy System Modernization',
-            description: `Transform your outdated systems into modern, agile platforms. We help you migrate legacy applications to the cloud, improving performance, security, and scalability while reducing maintenance costs.`,
+            description: `Embrace the future without abandoning the past. Our Legacy System Modernization services breathe new life into your existing systems, ensuring they align with contemporary technological standards. From migrating legacy applications to modern platforms to updating outdated infrastructure, we pave the way for enhanced efficiency and compatibility.`,
             learnMoreText: 'Learn more about Legacy System Modernization...',
             learnMoreLink: '/legacy-system-modernization-info',
             accessLink: '/contact',
-            image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop'
+            image: legacyModernizationBg
         }
     }
 ];

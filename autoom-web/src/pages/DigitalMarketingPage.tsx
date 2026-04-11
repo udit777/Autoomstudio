@@ -3,6 +3,9 @@ import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import socialAdsBg from '@/assets/social_ads_bg.jpg';
+import seoBg from '@/assets/seo_bg.jpg';
+import smoBg from '@/assets/smo_bg.jpg';
 
 const marketingServices = [
     {
@@ -38,8 +41,21 @@ const marketingServices = [
         title: 'Digital Marketing Services',
         content: {
             title: 'Digital Marketing Services',
-            description: 'Comprehensive digital marketing strategies to grow your business online. From strategy to execution, we help you reach your target audience effectively.',
-            learnMoreText: 'Learn more about Digital Marketing...',
+            description: (
+                <ul className="list-none space-y-2 text-sm sm:text-base">
+                    <li>Crafting high-performing websites to captivate audiences and enhance user experience.</li>
+                    <li>Boosting online visibility and rankings for easy discovery by potential customers.</li>
+                    <li>Creating engaging content strategies to establish brand authority and storytelling.</li>
+                    <li>Implementing strategic campaigns to connect with the target audience across platforms.</li>
+                    <li>Executing personalized campaigns that nurture leads and foster customer loyalty.</li>
+                    <li>Leveraging data to make informed decisions and optimize digital marketing efforts.</li>
+                    <li>Tailoring strategies for mobile users, ensuring brand accessibility and engagement.</li>
+                    <li>Building and maintaining a positive online image for credibility and trust.</li>
+                    <li>Streamlining marketing processes, saving time, and increasing efficiency.</li>
+                    <li>Creating captivating visuals to engage audiences and increase brand awareness.</li>
+                </ul>
+            ),
+            learnMoreText: 'Learn more about Digital Marketing Services...',
             learnMoreLink: '#',
             accessLink: '/contact',
             image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop'
@@ -50,11 +66,20 @@ const marketingServices = [
         title: 'Social Media Advertising',
         content: {
             title: 'Social Media Advertising',
-            description: 'Targeted social media advertising campaigns on major platforms. Reach your ideal customers where they spend their time.',
+            description: (
+                <ul className="list-none space-y-2 text-sm sm:text-base">
+                    <li>Tailored ad campaigns for diverse social media platforms, ensuring each ad aligns with the platform's style and resonates with its audience.</li>
+                    <li>Innovative ad concepts that capture attention and spark interest, creating compelling content to make your brand stand out.</li>
+                    <li>Pinpointing the right audience through in-depth analysis of demographics, interests, and behaviors, ensuring your ads reach the most relevant viewers.</li>
+                    <li>Active monitoring and optimization of live campaigns for enhanced performance, adapting strategies based on real-time results.</li>
+                    <li>Reconnecting with potential customers who previously showed interest, gently nudging them to revisit and take the desired action.</li>
+                    <li>Offering consultation and training to collaboratively plan an effective advertising strategy. Additionally, guidance and training available for those wanting to manage their social media ads independently.</li>
+                </ul>
+            ),
             learnMoreText: 'Learn more about Social Media Advertising...',
             learnMoreLink: '#',
             accessLink: '/contact',
-            image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop'
+            image: socialAdsBg
         }
     },
     {
@@ -62,11 +87,26 @@ const marketingServices = [
         title: 'Search Engine Optimization(SEO)',
         content: {
             title: 'Search Engine Optimization(SEO)',
-            description: 'Improve your search engine rankings and drive organic traffic. We specialize in on-page, off-page, and technical SEO strategies.',
-            learnMoreText: 'Learn more about SEO...',
+            description: (
+                <ul className="list-none space-y-2 text-sm sm:text-base">
+                    <li>Identify words and phrases used by potential customers in online searches.</li>
+                    <li>Optimize each webpage for search engines, providing a clear and user-friendly structure.</li>
+                    <li>Enhance website popularity and trustworthiness across the internet through external validations.</li>
+                    <li>Ensure website functionality, speed, mobile-friendliness, and easy interpretation by search engines.</li>
+                    <li>Develop content that resonates with the audience and aligns with search engine algorithms.</li>
+                    <li>Improve visibility in local searches, particularly beneficial for connecting with nearby customers.</li>
+                    <li>Conduct comprehensive health checks on the website, addressing issues that hinder performance.</li>
+                    <li>Study competitors to understand successful strategies and implement improvements.</li>
+                    <li>Monitor search result positions and provide insights for ongoing enhancements.</li>
+                    <li>Employ structured data to help search engines comprehend content more accurately.</li>
+                    <li>Adjust content to cater to voice-activated devices, recognizing the shift in search behavior.</li>
+                    <li>Tailor strategies specifically for online stores, ensuring products are easily discoverable by customers.</li>
+                </ul>
+            ),
+            learnMoreText: 'Learn more about Search Engine Optimization(SEO)...',
             learnMoreLink: '#',
             accessLink: '/contact',
-            image: 'https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?q=80&w=2080&auto=format&fit=crop'
+            image: seoBg
         }
     },
     {
@@ -74,11 +114,24 @@ const marketingServices = [
         title: 'Social Media Optimization (SMO)',
         content: {
             title: 'Social Media Optimization (SMO)',
-            description: 'Optimize your social media profiles and content to increase visibility and engagement. Build a strong community around your brand.',
-            learnMoreText: 'Learn more about SMO...',
+            description: (
+                <ul className="list-none space-y-2 text-sm sm:text-base">
+                    <li>Tailoring social media profiles to reflect brand identity and attract audiences effectively.</li>
+                    <li>Crafting engaging content for each platform to drive audience interaction and interest.</li>
+                    <li>Proactive engagement with the audience to encourage discussions and responsiveness to inquiries/comments.</li>
+                    <li>Connecting with influencers, related brands, and groups to cultivate a robust brand community.</li>
+                    <li>Implementing strategic hashtags to enhance content discoverability and reach.</li>
+                    <li>Creating targeted campaigns to maximize brand visibility and conversions.</li>
+                    <li>Analyzing social media performance to continuously optimize strategies.</li>
+                    <li>Utilizing monitoring tools to track mentions and sentiment, enabling proactive responses.</li>
+                    <li>Collaborating with influencers and industry figures to expand brand credibility and reach.</li>
+                    <li>Designing a comprehensive roadmap tailored to the brand's goals, audience, content, and ongoing optimization.</li>
+                </ul>
+            ),
+            learnMoreText: 'Learn more about Social Media Optimization (SMO)...',
             learnMoreLink: '#',
             accessLink: '/contact',
-            image: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1974&auto=format&fit=crop'
+            image: smoBg
         }
     },
     {
@@ -86,8 +139,20 @@ const marketingServices = [
         title: 'Web & Social Analytics',
         content: {
             title: 'Web & Social Analytics',
-            description: 'Data-driven insights to measure performance and optimize ROI. We help you make informed decisions based on real user data.',
-            learnMoreText: 'Learn more about Analytics...',
+            description: (
+                <ul className="list-none space-y-2 text-sm sm:text-base">
+                    <li><strong>Google Analytics:</strong> Tracks website visitors, behavior, and aids in site optimization.</li>
+                    <li><strong>Adobe Analytics:</strong> Provides comprehensive insights into website performance and audience behavior.</li>
+                    <li><strong>Social Media Monitoring Tools:</strong> Monitor, analyze, and engage with audiences across platforms.</li>
+                    <li><strong>Shopify Analytics, WooCommerce Analytics:</strong> Tracks sales, customer behavior, and product insights in e-commerce settings.</li>
+                    <li><strong>Google Analytics E-commerce Tracking:</strong> Enhances standard analytics with e-commerce-specific data.</li>
+                    <li><strong>Brandwatch, Talkwalker:</strong> Analyzes public sentiment around brands or products through social media and online content.</li>
+                    <li><strong>Chartbeat, Google Analytics Real-Time:</strong> Monitors website performance in real-time for immediate adjustments.</li>
+                    <li><strong>Optimizely, VWO:</strong> Tests and optimizes website elements to maximize conversions and engagement.</li>
+                    <li><strong>Similar Web, Alexa:</strong> Provides insights into competitors' strategies, demographics, and website traffic for refining one's own approach.</li>
+                </ul>
+            ),
+            learnMoreText: 'Learn more about Web & Social Analytics...',
             learnMoreLink: '#',
             accessLink: '/contact',
             image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop'

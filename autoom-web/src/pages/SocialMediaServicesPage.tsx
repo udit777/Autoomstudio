@@ -6,6 +6,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import socialServicesHero from '@/assets/social_services_hero.jpg';
 import socialManagementHero from '@/assets/social_management_hero.jpg';
 import socialPublishingBg from '@/assets/social_publishing.jpg';
+import socialContentCreationBg from '@/assets/social_content_creation_bg.jpg';
+import analyticsReportingBg from '@/assets/analytics_reporting_bg.jpg';
+import aiCustomerInteractionBg from '@/assets/ai_customer_interaction_bg.jpg';
 
 // Mock data for the social media services tabs
 const socialServices = [
@@ -47,6 +50,7 @@ const socialServices = [
     {
         id: 'content-creation',
         title: 'Social Media Content Creation',
+        backgroundImage: socialContentCreationBg,
         content: {
             title: 'Social Media Content Creation',
             points: [
@@ -64,6 +68,7 @@ const socialServices = [
     {
         id: 'analytics',
         title: 'Analytics and Reporting',
+        backgroundImage: analyticsReportingBg,
         content: {
             title: 'Analytics and Reporting',
             points: [
@@ -80,6 +85,7 @@ const socialServices = [
     {
         id: 'ai-interaction',
         title: 'AI-driven Customer Interaction',
+        backgroundImage: aiCustomerInteractionBg,
         content: {
             title: 'AI-driven Customer Interaction',
             points: [

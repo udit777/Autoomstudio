@@ -35,7 +35,27 @@ const securityServices = [
         title: 'Data Backup and Recovery',
         content: {
             title: 'Data Backup and Recovery',
-            description: 'Ensure business continuity with our robust data backup and recovery solutions. We provide automated backups, secure storage, and rapid recovery options to protect your critical data from loss or corruption. Don\'t let data loss cripple your business; stay prepared with our reliable services.',
+            description: (
+                <ul className="list-none space-y-2 text-sm md:text-base">
+                    <li>Ensure the safety of your critical data with meticulously scheduled backups.</li>
+                    <li>On-premises and cloud-based options for a flexible and comprehensive approach.</li>
+                    <li>Continuous monitoring of backup processes to catch potential issues before they escalate.</li>
+                    <li>Automated alerts for swift action and peace of mind.</li>
+                    <li>Implement robust encryption for data security during storage and transmission.</li>
+                    <li>Efficient and timely data restoration to minimize downtime.</li>
+                    <li>Regularly tested restoration processes for reliability.</li>
+                    <li>Utilize artificial intelligence to predict and prevent potential data loss events.</li>
+                    <li>Proactive measures to secure your data's future.</li>
+                    <li>Employ blockchain for transparent and immutable data integrity verification.</li>
+                    <li>Ensure the authenticity and reliability of your data.</li>
+                    <li>Comprehensive disaster recovery plans with cloud-based solutions for rapid restoration.</li>
+                    <li>Stay operational with our cloud-powered disaster recovery.</li>
+                    <li>Implement strategies for effective data lifecycle management, including archiving and deletion.</li>
+                    <li>Optimize storage and enhance efficiency throughout your data's journey.</li>
+                    <li>A dedicated support team available 24/7.</li>
+                    <li>Well-defined plans to address and mitigate data loss incidents promptly.</li>
+                </ul>
+            ),
             learnMoreText: 'Learn more about Data Backup and Recovery...',
             learnMoreLink: '#',
             accessLink: '/contact',
