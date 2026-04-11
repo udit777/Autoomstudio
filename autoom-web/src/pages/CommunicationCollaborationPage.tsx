@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import devopsBg from '@/assets/devops_bg.jpg';
 
 const communicationServices = [
     {
@@ -41,8 +42,30 @@ const communicationServices = [
         title: 'Content Management Systems (CMS) Development',
         content: {
             title: 'Content Management Systems (CMS) Development',
-            description: 'Empower your team with flexible and scalable Content Management Systems. We develop custom CMS solutions that allow you to easily manage, update, and publish content without technical expertise, ensuring your website remains dynamic and engaging.',
-            learnMoreText: 'Learn more about CMS Development...',
+            description: (
+                <ul className="list-none space-y-2 text-sm md:text-base">
+                    <li>Tailored solutions meeting your unique business needs.</li>
+                    <li>Ensure mobile compatibility for an optimal user experience.</li>
+                    <li>Unique themes tailored to your brand.</li>
+                    <li>Build plugins/modules specific to your requirements.</li>
+                    <li>Enhance existing functionalities.</li>
+                    <li>Effortless transition between CMS platforms.</li>
+                    <li>Ensure data integrity during the transfer process.</li>
+                    <li>Enhance user experience through faster load times.</li>
+                    <li>Optimize data storage and retrieval.</li>
+                    <li>Proactive measures to counter potential threats.</li>
+                    <li>Seamlessly blend CMS and online storefronts.</li>
+                    <li>Tailor your e-commerce experience.</li>
+                    <li>Connect with third-party services effortlessly.</li>
+                    <li>Enable efficient communication between systems.</li>
+                    <li>Multilingual capabilities: Reach a global audience seamlessly.</li>
+                    <li>Enhance user engagement through AI.</li>
+                    <li>Immediate assistance for critical issues.</li>
+                    <li>Minimize disruption in case of data loss.</li>
+                    <li>Mitigate security threats promptly.</li>
+                </ul>
+            ),
+            learnMoreText: 'Learn more about Content Management Systems (CMS) Development...',
             learnMoreLink: '#',
             accessLink: '/contact',
             image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2074&auto=format&fit=crop'
@@ -53,11 +76,29 @@ const communicationServices = [
         title: 'DevOps Services',
         content: {
             title: 'DevOps Services',
-            description: 'Streamline your software development and operations with our DevOps services. We automate workflows, improve collaboration, and accelerate delivery, ensuring high-quality software releases and robust infrastructure management.',
+            description: (
+                <ul className="list-none space-y-2 text-sm md:text-base">
+                    <li>Automate your build and testing processes for seamless code integration.</li>
+                    <li>Implement pipelines to smoothly move code from development to production.</li>
+                    <li>Track code changes effortlessly for enhanced collaboration and versioning.</li>
+                    <li>Gain insights into system performance, errors, and application behavior.</li>
+                    <li>Foster teamwork through integrated communication tools like Slack or Microsoft Teams.</li>
+                    <li>Optimize scalability and flexibility with expert guidance on microservices.</li>
+                    <li>Efficiently deploy and scale applications using Docker and Kubernetes.</li>
+                    <li>Automate infrastructure provisioning and management with advanced IaC solutions.</li>
+                    <li>Integrate security into development with automated scans and vulnerability assessments.</li>
+                    <li>Proactively monitor and respond with AI-driven operations for enhanced reliability.</li>
+                    <li>Instill a culture of security across the DevOps lifecycle for robust development.</li>
+                    <li>Minimize downtime with rapid incident response services.</li>
+                    <li>Ensure business continuity with robust disaster recovery plans and testing.</li>
+                    <li>Round-the-clock support for critical issues and emergencies.</li>
+                    <li>Identify and prevent issues through thorough investigations and preventive measures.</li>
+                </ul>
+            ),
             learnMoreText: 'Learn more about DevOps Services...',
             learnMoreLink: '#',
             accessLink: '/contact',
-            image: 'https://images.unsplash.com/photo-1667372393119-c85c020799a3?q=80&w=2670&auto=format&fit=crop'
+            image: devopsBg
         }
     }
 ];
