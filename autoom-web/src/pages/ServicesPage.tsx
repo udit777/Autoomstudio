@@ -4,7 +4,9 @@ import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 import { CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import aiWorkspaceBg from '@/assets/support_hero_bg.jpg';
+import aiWorkspaceBg from '@/assets/ai_workspace_bg.jpg';
+import itInfrastructureBg from '@/assets/it_infrastructure_bg.jpg';
+import softwareDevBg from '@/assets/software_dev_services_bg.jpg';
 
 // Specific services list matching the reference image provided by the user
 const servicesList = [
@@ -30,6 +32,7 @@ const servicesList = [
         content: {
             title: 'IT Infrastructure Services',
             description: '',
+            image: itInfrastructureBg,
             points: [
                 'Robust Architecture: Design and implement a solid IT foundation, ensuring your infrastructure is tailored to support your business needs.',
                 'Scalability: Easily expand your operations with a scalable infrastructure that grows alongside your business.',
@@ -45,6 +48,7 @@ const servicesList = [
         content: {
             title: 'Software Development Services',
             description: '',
+            image: softwareDevBg,
             points: [
                 'Custom Solutions: Tailor-made software applications designed to meet your specific business requirements and objectives.',
                 'End-to-End Development: From ideation to deployment, we guide you through the entire software development life cycle.',
