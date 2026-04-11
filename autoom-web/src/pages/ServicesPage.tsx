@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 import { CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import aiWorkspaceBg from '@/assets/support_hero_bg.jpg';
 
 // Specific services list matching the reference image provided by the user
 const servicesList = [
@@ -13,6 +14,7 @@ const servicesList = [
         content: {
             title: 'AI Workspace - Ausomemgr',
             description: '',
+            image: aiWorkspaceBg,
             points: [
                 'Robust Architecture: Design and implement a strong AI-ready foundation, ensuring your workspace infrastructure is optimized to handle data-intensive processes and complex machine learning workflows.',
                 'Scalability: Effortlessly scale your AI capabilities with an infrastructure that expands as your models, data, and business needs grow—without compromising performance.',
@@ -169,8 +171,18 @@ export function ServicesPage() {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.3 }}
-                                    className="bg-[#0f172a] rounded-2xl overflow-hidden shadow-2xl w-full flex flex-col p-8 md:p-12 text-white min-h-[600px]"
+                                    className="bg-[#0f172a] rounded-2xl overflow-hidden shadow-2xl w-full flex flex-col p-8 md:p-12 text-white min-h-[600px] relative"
                                 >
+                                    {/* Background Image (if available) */}
+                                    {activeService.content.image && (
+                                        <div className="absolute inset-0 z-0 opacity-20">
+                                            <img
+                                                src={activeService.content.image}
+                                                alt={activeService.content.title}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    )}
                                     <div className="relative z-10 flex flex-col h-full justify-center">
                                         <div className="flex flex-col items-center mb-8">
                                             {/* Symbol removed as requested */}
