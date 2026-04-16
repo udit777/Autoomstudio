@@ -5,7 +5,7 @@ import { ServiceSection } from '@/components/layout/ServiceSection';
 import { WhyWorkWithUs } from '@/components/layout/WhyWorkWithUs';
 import { ReadyToCollaborate } from '@/components/layout/ReadyToCollaborate';
 import { Industry4Section } from '@/components/layout/Industry4Section';
-import { Facebook, Twitter, Linkedin, Instagram, Youtube, MessageCircle, MessageSquare } from 'lucide-react';
+
 
 // Image Imports
 import aiWorkspaceImg from '@/assets/ai-workspace.png';
@@ -162,20 +162,7 @@ export function HomePage() {
 
             <ReadyToCollaborate />
 
-            {/* Fixed Social Sidebar */}
-            <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
-                <a href="#" className="bg-[#3b5998] p-3 text-white hover:w-14 w-12 transition-all flex justify-center"><Facebook className="w-6 h-6" /></a>
-                <a href="#" className="bg-black p-3 text-white hover:w-14 w-12 transition-all flex justify-center"><Twitter className="w-6 h-6" /></a>
-                <a href="#" className="bg-[#0077b5] p-3 text-white hover:w-14 w-12 transition-all flex justify-center"><Linkedin className="w-6 h-6" /></a>
-                <a href="#" className="bg-[#E1306C] p-3 text-white hover:w-14 w-12 transition-all flex justify-center"><Instagram className="w-6 h-6" /></a>
-                <a href="#" className="bg-[#FF0000] p-3 text-white hover:w-14 w-12 transition-all flex justify-center"><Youtube className="w-6 h-6" /></a>
-            </div>
 
-            {/* Fixed Chat/Whatsapp Buttons (Bottom Right) */}
-            <div className="fixed right-6 bottom-6 z-50 flex flex-col gap-4">
-                <a href="#" className="bg-[#25D366] p-3 rounded-full text-white shadow-lg hover:scale-110 transition-transform"><MessageCircle className="w-8 h-8" /></a>
-                <a href="#" className="bg-[#8B5CF6] p-3 rounded-full text-white shadow-lg hover:scale-110 transition-transform"><MessageSquare className="w-8 h-8" /></a>
-            </div>
         </>
     );
 }

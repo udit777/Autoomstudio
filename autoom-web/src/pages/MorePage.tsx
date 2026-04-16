@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Section } from '@/components/ui/Section';
-import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
+
 
 const sections = [
     {
@@ -31,14 +31,7 @@ export function MorePage() {
                 <div className="text-center z-10">
                     <h1 className="text-4xl md:text-6xl font-normal text-white tracking-wide">More</h1>
                 </div>
-                {/* Social Sidebar (Fixed on right like in screenshot) */}
-                <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-0 bg-transparent">
-                    <a href="#" className="bg-[#3b5998] p-2 text-white hover:opacity-90 transition-opacity"><Facebook className="w-5 h-5" /></a>
-                    <a href="#" className="bg-[#000000] p-2 text-white hover:opacity-90 transition-opacity"><Twitter className="w-5 h-5" /></a>
-                    <a href="#" className="bg-[#0077b5] p-2 text-white hover:opacity-90 transition-opacity"><Linkedin className="w-5 h-5" /></a>
-                    <a href="#" className="bg-[#E1306C] p-2 text-white hover:opacity-90 transition-opacity"><Instagram className="w-5 h-5" /></a>
-                    <a href="#" className="bg-[#FF0000] p-2 text-white hover:opacity-90 transition-opacity"><Youtube className="w-5 h-5" /></a>
-                </div>
+
             </div>
 
             {/* Content Section */}
