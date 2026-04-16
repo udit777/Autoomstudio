@@ -12,20 +12,75 @@ export function ChatBot({ isOpen, onClose }: ChatBotProps) {
     ]);
     const [input, setInput] = useState("");
 
-    const handleSend = () => {
+    const [sessionId] = useState(() => Math.random().toString(36).substring(7));
+
+    const handleSend = async () => {
         if (!input.trim()) return;
         
+        const userMessage = input;
         // Add user message
-        setMessages(prev => [...prev, { text: input, isUser: true }]);
+        setMessages(prev => [...prev, { text: userMessage, isUser: true }]);
         setInput("");
 
-        // Simulate bot response
-        setTimeout(() => {
+        try {
+            const response = await fetch("https://home.ausomemgr.com/webhook/Yaksha", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    chatInput: userMessage,
+                    message: userMessage,
+                    sessionId: sessionId,
+                }),
+            });
+
+            if (!response.ok) {
+                console.error("Webhook error:", await response.text());
+                setMessages(prev => [...prev, { 
+                    text: "Sorry, I'm having trouble connecting right now. Please try again later.", 
+                    isUser: false 
+                }]);
+                return;
+            }
+
+            const data = await response.json();
+            let botText = "Sorry, I received an invalid response.";
+
+            // If the response is an array, take the first item
+            let responseObj = data;
+            if (Array.isArray(data) && data.length > 0) {
+                responseObj = data[0];
+            }
+
+            // Handle different possible response formats
+            if (typeof responseObj === 'string') {
+                botText = responseObj;
+            } else if (responseObj && typeof responseObj === 'object') {
+                if (responseObj.output) {
+                    botText = responseObj.output;
+                } else if (responseObj.text) {
+                    botText = responseObj.text;
+                } else if (responseObj.message) {
+                    botText = responseObj.message;
+                } else if (responseObj.response) {
+                    botText = responseObj.response;
+                } else {
+                    botText = JSON.stringify(data); // Show full data if fields don't match
+                }
+            }
+
             setMessages(prev => [...prev, { 
-                text: "Thanks for reaching out! A representative will connect with you shortly. You can also try our WhatsApp for immediate assistance.", 
+                text: botText, 
                 isUser: false 
             }]);
-        }, 1000);
+        } catch (error) {
+            console.error("Chat error:", error);
+            setMessages(prev => [...prev, { 
+                text: "Sorry, an error occurred communicating with the server.", 
+                isUser: false 
+            }]);
+        }
     };
 
     if (!isOpen) return null;
