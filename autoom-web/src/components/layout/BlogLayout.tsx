@@ -247,7 +247,7 @@ export function BlogLayout({
                         </div>
 
                         {/* Sidebar Column */}
-                        <aside className="w-full lg:w-[380px] flex-shrink-0 space-y-10 lg:sticky lg:top-32 lg:self-start lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto no-scrollbar pb-10">
+                        <aside className="w-full lg:w-[380px] flex-shrink-0 space-y-10 lg:sticky lg:top-32 lg:self-start">
                             
                             {/* Say Hello! Widget */}
                             <div className="bg-[#f0f9f8] border border-[#d1e9e6] rounded-2xl p-8">
